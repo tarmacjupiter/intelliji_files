@@ -43,5 +43,6 @@ public class Section2_6_2_7_NOTES {
         System.out.println(24 + 56 + " Days of School"); // Mathematically adds before concatenating
         System.out.println("Days of School: " + 24 + 56); // Strings + numbers will ALWAYS concatenate
 
+        System.out.println("Checking to see if Git Bash on the Windows Terminal will actually work... hehehe");
     }
 }
