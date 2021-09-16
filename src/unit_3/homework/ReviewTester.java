@@ -14,6 +14,8 @@ public class ReviewTester {
         System.out.println(sd);
         System.out.println();
         System.out.println(jm);
+	System.out.println();
+	System.out.println("Testing git");
     }
 }
 
