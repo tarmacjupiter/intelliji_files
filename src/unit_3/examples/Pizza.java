@@ -42,6 +42,19 @@ public class Pizza {
         return isDeepDish;
     }
 
+    // compareTo() via size
+    // this.compareTo(otherPizza)
+
+    public int compareTo(Pizza otherPizza){
+        if(this.getInches() < otherPizza.getInches()) { //in order from left to right
+            return -1;
+        } else if(this.getInches() > otherPizza.getInches()){ //out of order from left to right
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
     //SETTERS
 
     public void setStore(String store) {
