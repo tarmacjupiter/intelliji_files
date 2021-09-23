@@ -25,7 +25,7 @@ public class Chevy {
     }
 
     //FULL CONSTRUCTOR
-    public Chevy(int aYear, int aMileage, int aFuel, int aPrice, String aModel, String aColor, boolean aLuxury, boolean a4WD, boolean aSports){
+    public Chevy(int aYear, int aMileage, double aFuel, int aPrice, String aModel, String aColor, boolean aLuxury, boolean a4WD, boolean aSports){
         year = aYear;
         mileage = aMileage;
         fuel_efficiency = aFuel;
@@ -134,11 +134,46 @@ public class Chevy {
         }
     }
 
-    public void toString(){
+    //toString method
+
+    public void toStringMethod(){
         System.out.println(year + " Chevrolet " + model + " (" + color + ")");
         System.out.println("PRICE: " + "$" + price);
         System.out.println("MILEAGE: " + mileage);
         System.out.println("FUEL EFFICIENCY: " + fuel_efficiency);
-
+        System.out.println("PACKAGES: ");
+        if(luxury_status == true){
+            System.out.println("    -Luxury Package");
+        }else if(wd_status == true){
+            System.out.println("    -4WD Package");
+        }else if(sports_status == true){
+            System.out.println("    -Sports Package");
+        }else{
+            System.out.println("    -");
+        }
     }
+
+    //calcPrice method
+
+    public double calcPrice(){
+        price = price;
+        double priceDouble = price;
+
+        fuel_efficiency = fuel_efficiency;
+
+        if(luxury_status == true){
+            double luxury_percent = price * .322;
+            priceDouble = priceDouble + luxury_percent;
+        }else if(wd_status == true){
+            priceDouble = priceDouble + 3500;
+        }else if(sports_status == true){
+            double sports_percent = price * .272;
+            priceDouble = priceDouble + sports_percent;
+
+            double fuel_percent = fuel_efficiency * .20;
+            fuel_efficiency = fuel_percent - fuel_percent;
+        }
+        return priceDouble;
+    }
+
 }

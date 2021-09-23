@@ -1,8 +1,7 @@
 package unit_3.lab;
 
 public class ChevyDriverStudent {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Create objects
         Chevy traxBase = new Chevy();
         Chevy traxLux = new Chevy();
@@ -12,15 +11,19 @@ public class ChevyDriverStudent {
         // *** UTILIZE SETTER METHODS TO COMPLETE THE FOLLOWING: ***
         // Set traxBase mileage to 15
 
+        traxBase.setMileage(15);
+
         // Set traxLux mileage to 175 with both a luxury and 4WD package
 
-
+        traxLux.setMileage(175);
+        traxLux.setLuxury_status(true);
+        traxLux.setWd_status(true);
 
 
         // Printouts
         System.out.println("*** VEHICLE PRINTOUTS ***");
-        System.out.println(traxBase);
-        System.out.println(traxLux);
+//        System.out.println(traxBase.toStringMethod());
+//        System.out.println(traxLux.toStringMethod());
 
         // Display price comparison
         System.out.println("*** COMPARE BY PRICE ***");
@@ -28,9 +31,9 @@ public class ChevyDriverStudent {
         System.out.print("\tLowest price:\t");
 
         // *** COMPLETE THE FOLLOWING DECISION STATEMENTS ***
-        if (_________________________________)
+        if (corvetteClassic.getPrice() < corvetteSport.getPrice())
             System.out.println("Classic Corvette at $" + corvetteClassic.getPrice());
-        else if (_________________________________)
+        else if (corvetteClassic.getPrice() > corvetteSport.getPrice())
             System.out.println("Sport Corvette at $" + corvetteSport.getPrice());
         else
             System.out.println("Tie at $" + corvetteClassic.getPrice());
@@ -41,9 +44,10 @@ public class ChevyDriverStudent {
         System.out.print("\tStatus:\t");
 
         // *** COMPLETE THE FOLLOWING DECISION STATEMENTS ***
-        if (_________________________________)
+        if (traxLux.equals(traxBase))
             System.out.println("Same car");
         else
             System.out.println("Not same car");
     }
 }
+
