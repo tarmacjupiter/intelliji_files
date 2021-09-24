@@ -22,8 +22,8 @@ public class ChevyDriverStudent {
 
         // Printouts
         System.out.println("*** VEHICLE PRINTOUTS ***");
-//        System.out.println(traxBase.toStringMethod());
-//        System.out.println(traxLux.toStringMethod());
+        System.out.println(traxBase.toString());
+        System.out.println(traxLux.toString());
 
         // Display price comparison
         System.out.println("*** COMPARE BY PRICE ***");

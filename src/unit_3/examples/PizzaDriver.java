@@ -42,6 +42,10 @@ public class PizzaDriver {
         //Comparing Jacks inches to Lous inches
         System.out.println("Comparing Jacks inches to Lous inches");
         System.out.println(jacks.compareTo(lous));
+        System.out.println();
+
+        //toString methods
+        System.out.println(jacks.toString());
 
     }
 }

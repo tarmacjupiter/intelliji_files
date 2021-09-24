@@ -104,4 +104,19 @@ public class Pizza {
         System.out.println("# of Toppings: " + numToppings);
         System.out.println("Is it deep dish?: " + isDeepDish);
     }
+
+    //toString() method
+    public String toString(){
+        String output = "";
+
+        output += store + " Pizza\n";
+
+        output += "\t -Number of Toppings:\t" + numToppings + "\n";
+
+        output += "\t -Size of Pizza:\t   " + inches + "\n";
+
+        output += "\t -Deep Dish Status:\t" + isDeepDish + "\n";
+
+        return output;
+    }
 }

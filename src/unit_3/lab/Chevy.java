@@ -136,22 +136,36 @@ public class Chevy {
 
     //toString method
 
-    public void toStringMethod(){
-        System.out.println(year + " Chevrolet " + model + " (" + color + ")");
-        System.out.println("PRICE: " + "$" + price);
-        System.out.println("MILEAGE: " + mileage);
-        System.out.println("FUEL EFFICIENCY: " + fuel_efficiency);
-        System.out.println("PACKAGES: ");
-        if(luxury_status == true){
-            System.out.println("    -Luxury Package");
-        }else if(wd_status == true){
-            System.out.println("    -4WD Package");
-        }else if(sports_status == true){
-            System.out.println("    -Sports Package");
-        }else{
-            System.out.println("    -");
+    public String toString() {
+        String output = "";
+
+        output += year + " Chevrolet " + model + " (" + color + ")\n";
+
+        output += "\tPRICE:\t\t\t\t" + "$" + price + "\n";
+
+        output += "\tMILEAGE:\t\t\t" + mileage + "\n";
+
+        output += "\tFUEL EFFICIENCY:\t" + fuel_efficiency + "\n";
+
+        output += "\tPACKAGES: \n";
+
+        if (luxury_status == true) {
+            output += "\t\t-Luxury Package\n";
         }
+        if(wd_status == true) {
+            output += "\t\t-4WD Package\n";
+        }
+        if(sports_status == true) {
+            output += "\t\t-Sports Package\n";
+        }
+
+        if(luxury_status == false && wd_status == false && sports_status == false){
+            output += "\t\t-None";
+        }
+
+        return output;
     }
+
 
     //calcPrice method
 
