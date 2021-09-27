@@ -19,6 +19,8 @@ public class ChevyDriverStudent {
         traxLux.setLuxury_status(true);
         traxLux.setWd_status(true);
 
+        //price
+        System.out.println(corvetteSport.calcPrice());
 
         // Printouts
         System.out.println("*** VEHICLE PRINTOUTS ***");
