@@ -1,5 +1,7 @@
 package unit_3.lab;
 
+import java.text.DecimalFormat;
+
 public class Chevy {
     private int year;
     private int mileage;
@@ -17,7 +19,7 @@ public class Chevy {
         model = "Trax";
         year = 2021;
         mileage = 0;
-        price = 16000;
+        price = (16000 + 500) / 1000 * 1000;
         fuel_efficiency = 35;
         luxury_status = false;
         wd_status = false;
@@ -29,7 +31,9 @@ public class Chevy {
         year = aYear;
         mileage = aMileage;
         fuel_efficiency = aFuel;
-        price = aPrice;
+//        price = (aPrice + 500) / 1000 * 1000; (round the thousand place)
+        price = Math.round(aPrice);
+//        price = aPrice;
         model = aModel;
         color = aColor;
         luxury_status = aLuxury;
