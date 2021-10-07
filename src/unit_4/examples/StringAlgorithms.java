@@ -1,4 +1,6 @@
 package unit_4.examples;
+//import org.apache.commons.lang3.StringUtils;
+
 
 public class StringAlgorithms {
     public static void main(String[] args) {
@@ -67,12 +69,18 @@ public class StringAlgorithms {
         // create a new String, or modify the existing String, that removes
         // the word "little" entirely
 
+//       String newStr = "";
+//       newStr += phrase.re
+//       System.out.println(newStr);
+
 
 
         // create a new String (based on phrase), or modify the existing String,
         // that replaces the word "little" with the word "BIG"
 
 
+
+        System.out.println(phrase.replace("little", "BIG"));
 
 
     }
