@@ -28,7 +28,7 @@ public class Loops {
     public static void everyOtherWordBackwards(String str){
         /*
         This is not my code, I looked this up. I can sorta understand how it works, but I've never used
-        StringBuilder before. 
+        StringBuilder before.
         */
 
         StringBuilder sb = new StringBuilder();
