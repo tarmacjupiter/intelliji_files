@@ -1,5 +1,7 @@
 package unit_4.lab;
 
+import java.util.Locale;
+
 public class PigLatinTester {
     public static void main(String[] args) {
 

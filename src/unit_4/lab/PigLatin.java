@@ -1,5 +1,7 @@
 package unit_4.lab;
 
+import java.util.Locale;
+
 public class PigLatin {
     String phrase;
 
@@ -8,8 +10,11 @@ public class PigLatin {
     }
 
     public void toPigLatin(String phrase){
+
+        String lower = phrase.toLowerCase();
+
         //Break up String into an array of words, each split by a space (" ")
-        String phraseArr[] = phrase.split(" ");
+        String phraseArr[] = lower.split(" ");
 
         /*
         2. words beginning with vowels -> add "yay" to the end
