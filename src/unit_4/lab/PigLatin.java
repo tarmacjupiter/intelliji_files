@@ -11,10 +11,14 @@ public class PigLatin {
 
     public void toPigLatin(String phrase){
 
+        String output = "";
+
         String lower = phrase.toLowerCase();
 
         //Break up String into an array of words, each split by a space (" ")
         String phraseArr[] = lower.split(" ");
+
+        StringBuffer sb = new StringBuffer();
 
         /*
         2. words beginning with vowels -> add "yay" to the end
@@ -48,9 +52,11 @@ public class PigLatin {
                     phraseArr[i] = phraseArr[i].substring(1) + phraseArr[i].charAt(0);
                     phraseArr[i] += "ay";
                 }
-                System.out.print(phraseArr[i] + " ");
-            }
+                output = phraseArr[i] + " ";
+
+                System.out.print(output.substring(0,1).toUpperCase() + output.substring(1));
         }
     }
+}
 
 
