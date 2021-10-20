@@ -11,14 +11,18 @@ public class PigLatin {
 
     public void toPigLatin(String phrase){
 
+        //Declare variable outside Loop to make sure you can access it later within the scope of the loop
         String output = "";
 
+        //Turn phrase lowercase
         String lower = phrase.toLowerCase();
 
         //Break up String into an array of words, each split by a space (" ")
         String phraseArr[] = lower.split(" ");
 
+        //Create new "StringBuffer" called "sb"
         StringBuffer sb = new StringBuffer();
+
 
         /*
         2. words beginning with vowels -> add "yay" to the end
@@ -35,12 +39,6 @@ public class PigLatin {
                 case 'o':
                 case 'u':
                 case 'y':
-                case 'A':
-                case 'E':
-                case 'I':
-                case 'O':
-                case 'U':
-                case 'Y':
                     phraseArr[i] += "yay";
             }
             /*
@@ -48,13 +46,14 @@ public class PigLatin {
                     cat -> atcay
                     black -> ackblay
             */
-            if (phraseArr[i].charAt(0) != 'a' && phraseArr[i].charAt(0) != 'e' && phraseArr[i].charAt(0) != 'i' && phraseArr[i].charAt(0) != 'o' && phraseArr[i].charAt(0) != 'u' && phraseArr[i].charAt(0) != 'A' && phraseArr[i].charAt(0) != 'E' && phraseArr[i].charAt(0) != 'I' && phraseArr[i].charAt(0) != 'O' && phraseArr[i].charAt(0) != 'U') {
+            if (phraseArr[i].charAt(0) != 'a' && phraseArr[i].charAt(0) != 'e' && phraseArr[i].charAt(0) != 'i' && phraseArr[i].charAt(0) != 'o' && phraseArr[i].charAt(0) != 'u') {
                     phraseArr[i] = phraseArr[i].substring(1) + phraseArr[i].charAt(0);
                     phraseArr[i] += "ay";
                 }
                 output = phraseArr[i] + " ";
 
-                System.out.print(output.substring(0,1).toUpperCase() + output.substring(1));
+//                System.out.print(output.substring(0,1).toUpperCase() + output.substring(1));
+                 System.out.print(output);
         }
     }
 }
