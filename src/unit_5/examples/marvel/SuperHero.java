@@ -22,11 +22,11 @@ public class SuperHero {
         this.name = name;
     }
 
-    public String getPower() {
+    public Power getPower() {
         return power;
     }
 
-    public void setPower(String power) {
+    public void setPower(Power power) {
         this.power = power;
     }
 }
