@@ -4,16 +4,31 @@ public class SuperHero {
     // Instance Variables
     private String name;
     private Power power;
+    private int health;
 
     // Full Constructor
+
     public SuperHero(String name, Power power){
         this.name = name;
         this.power = power;
+        this.health = 1000;
+    }
+
+    /**
+     * This method returns a String of the SuperHero's name, power, power name, and strength
+     * @return the output sentence with details about a SuperHero
+     */
+    public String toString(){
+        String output = "";
+        output += "SuperHero's Name:\t" + name + "\n";
+        output += "SuperHero's Health:\t" + health + "\n";
+        output += "SuperHero's Power:\n";
+        output += "\tName:\t\t\t" + power.getName() + "\n";
+        output += "\tStrength:\t\t" + power.getStrength() + "\n";
+        return output;
     }
 
     // Getters and Setters
-
-
     public String getName() {
         return name;
     }
@@ -28,5 +43,13 @@ public class SuperHero {
 
     public void setPower(Power power) {
         this.power = power;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 }

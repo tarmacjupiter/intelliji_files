@@ -1,6 +1,6 @@
 package unit_5.examples.marvel;
 
-public class MarvelMovieTester {
+public class MarvelMovieTester{
     public static void main(String[] args) {
         //Create a Power Object
         Power superStrength = new Power("Super Strength", 100);
@@ -16,22 +16,15 @@ public class MarvelMovieTester {
         SuperHero superman = new SuperHero("Superman", new Power("Super Strength", 100));
 
         // Initial Printout
-        System.out.println("Name: " + hulk.getName());
-
-        System.out.println("Power: ");
-        System.out.println("\tName: " + hulk.getPower().getName());
-        System.out.println("\tStrength: " + hulk.getPower().getStrength());
+        System.out.println(hulk);
+        // Can do System.out.println(hulk.toString());
 
         superStrength.setStrength(150);
 
         System.out.println();
 
         //Change strength variable of superstrength
-        System.out.println("Name: " + superman.getName());
-
-        System.out.println("Power: ");
-        System.out.println("\tName: " + superman.getPower().getName());
-        System.out.println("\tStrength: " + superman.getPower().getStrength());
+        System.out.println(superman);
 
         System.out.println();
 
@@ -44,6 +37,18 @@ public class MarvelMovieTester {
         }else{
             System.out.println("After a hard battle The Hulk and Loki have exhausted themselves");
         }
+    }
+    public static void battle(SuperHero goodGuy, Villain badGuy){
+        while(goodGuy.getHealth() >= 0 && badGuy.getHealth() >= 0){
+            boolean heroHit = Math.random() < 0.5;      // [0, 0.5) is a hit
+            boolean villainHit = Math.random() < 0.5;   // [0, 0.5) is a hit
 
+            if(heroHit){
+                badGuy.setHealth(badGuy.getHealth() - goodGuy.getPower().getStrength());
+            }
+            if(villainHit){
+                goodGuy.setHealth(goodGuy.getHealth() - badGuy.getPower().getStrength());
+            }
+        }
     }
 }
