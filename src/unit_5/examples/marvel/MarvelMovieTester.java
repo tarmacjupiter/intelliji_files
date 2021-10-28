@@ -1,6 +1,6 @@
 package unit_5.examples.marvel;
 
-public class MarvelMovieTester{
+public class MarvelMovieTester {
     public static void main(String[] args) {
         //Create a Power Object
         Power superStrength = new Power("Super Strength", 100);
@@ -28,27 +28,49 @@ public class MarvelMovieTester{
 
         System.out.println();
 
-        //Battle between Loki and the Hulk
-        // Set up if else if statement comparing Loki and Hulk's Power Strength
-        if(superStrength.getStrength() > loki.getPower().getStrength()){
-            System.out.println("The Hulk beats Loki into a pulp");
-        } else if (superStrength.getStrength() < loki.getPower().getStrength()){
-            System.out.println("Loki outwits The Hulk and destroys him");
-        }else{
-            System.out.println("After a hard battle The Hulk and Loki have exhausted themselves");
-        }
+        //Battle between The Hulk and Loki
+        battle(hulk, loki);
     }
-    public static void battle(SuperHero goodGuy, Villain badGuy){
-        while(goodGuy.getHealth() >= 0 && badGuy.getHealth() >= 0){
+
+    /**
+     * Has a Battle between two classes, SuperHero class and Villain class, then prints out who has won
+     * @param goodGuy the SuperHero object
+     * @param badGuy the Villain object
+     */
+    public static void battle(SuperHero goodGuy, Villain badGuy) {
+        while (goodGuy.getHealth() != 0 && badGuy.getHealth() != 0) {
             boolean heroHit = Math.random() < 0.5;      // [0, 0.5) is a hit
             boolean villainHit = Math.random() < 0.5;   // [0, 0.5) is a hit
-
-            if(heroHit){
+            //Hero hits the Villain
+            if (heroHit) {
+                System.out.println(goodGuy.getName() + " punches " + badGuy.getName() + " in the face!");
                 badGuy.setHealth(badGuy.getHealth() - goodGuy.getPower().getStrength());
+                if(badGuy.getHealth() < 0){
+                    badGuy.setHealth(0);
+                }
             }
-            if(villainHit){
+            //Villain hits the Hero
+            if (villainHit) {
+                System.out.println(badGuy.getName() + " stabs " + goodGuy.getName() + "!");
                 goodGuy.setHealth(goodGuy.getHealth() - badGuy.getPower().getStrength());
+                if(goodGuy.getHealth() < 0){
+                    goodGuy.setHealth(0);
+                }
             }
+
+            if(!villainHit && !heroHit){
+                System.out.println("Both " + goodGuy.getHealth() + " and " + badGuy.getName() + " have missed!");
+            }
+
+            System.out.println("Hero's Heath:\t\t" + goodGuy.getHealth());
+            System.out.println("Villain's Health:\t" + badGuy.getHealth());
+            System.out.println();
+        }
+        //someone has lost the battle, check for a winner
+        if(badGuy.getHealth() == 0){
+            System.out.println(goodGuy.getName() + " has won!");
+        }else{
+            System.out.println(badGuy.getName() + " has won...");
         }
     }
 }
