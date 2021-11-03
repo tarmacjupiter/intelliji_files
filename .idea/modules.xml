@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/intellij_files.iml" filepath="$PROJECT_DIR$/intellij_files.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intelliji_files.iml" filepath="$PROJECT_DIR$/intelliji_files.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/intelliji_files1.iml" filepath="$PROJECT_DIR$/src/intelliji_files1.iml" />
     </modules>
   </component>
 </project>

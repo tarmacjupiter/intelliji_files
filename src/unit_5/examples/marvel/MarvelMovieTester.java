@@ -15,6 +15,9 @@ public class MarvelMovieTester {
 
         SuperHero superman = new SuperHero("Superman", new Power("Super Strength", 100));
 
+        //Create a second Villain object
+        Villain venom = new Villain("Venom", new Power("Hungry", 200));
+
         // Initial Printout
         System.out.println(hulk);
         // Can do System.out.println(hulk.toString());
@@ -26,10 +29,15 @@ public class MarvelMovieTester {
         //Change strength variable of superstrength
         System.out.println(superman);
 
+        //Call calcAvgStrength() method
+        SuperHero.calcAvgStrength();
+
         System.out.println();
 
         //Battle between The Hulk and Loki
         battle(hulk, loki);
+        battle(superman, venom);
+
     }
 
     /**
@@ -53,6 +61,7 @@ public class MarvelMovieTester {
             if (villainHit) {
                 System.out.println(badGuy.getName() + " stabs " + goodGuy.getName() + "!");
                 goodGuy.setHealth(goodGuy.getHealth() - badGuy.getPower().getStrength());
+//                goodGuy.getTotalHeroHealth(goodGuy.getTotalHeroHealth() - badGuy.getHealth());
                 if(goodGuy.getHealth() < 0){
                     goodGuy.setHealth(0);
                 }
