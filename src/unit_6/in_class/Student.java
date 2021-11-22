@@ -25,14 +25,13 @@ public class Student {
      */
     public String toString(){
         String output = "";
-        output += "Name:\t" + name;
-        for(int i = 0; i < classes.length; i++){
-            if(classes[i] == null){
+        output += "Name:\t" + name + "\n";
+        for (Course aClass : classes) {
+            if (aClass == null) {
                 output += "\t\tNo Class Listed\n";
             } else {
-                output += classes[i] + "\n";
+                output += aClass + "\n";
             }
-//            output += "\t\tClass " + i+1 + ": " + classes[i];
         }
         return output;
     }
@@ -54,13 +53,4 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-
-//    @Override
-//    public String toString() {
-//        return "Student{" +
-//                "classes=" + Arrays.toString(classes) +
-//                ", name='" + name + '\'' +
-//                '}';
-//    }
 }

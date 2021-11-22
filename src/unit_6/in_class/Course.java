@@ -29,7 +29,10 @@ public class Course {
      * a to String method returning a string of all the Course data
      * @return a String containing the teaccher,grade,subject, and period of a Course object
      */
-//    public String toString(){
-//
-//    }
+    public String toString(){
+        //1.    grade       subject     teacher
+        String output = "";
+        output += period + ".\t" + grade + "\t" + subject + "\t" + teacher;
+        return output;
+    }
 }
