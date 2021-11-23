@@ -32,7 +32,11 @@ public class Course {
     public String toString(){
         //1.    grade       subject     teacher
         String output = "";
-        output += period + ".\t" + grade + "\t" + subject + "\t" + teacher;
+        output += period + ".\t" + grade + "\t" + subject;
+        while(output.length() < 30){
+            output += " ";
+        }
+        output += "\t" + teacher;
         return output;
     }
 }

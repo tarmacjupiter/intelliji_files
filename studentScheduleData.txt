@@ -1,0 +1,199 @@
+10
+Molly Jones
+Vlaming
+Basketball PE
+A
+1
+Higgins
+Trig Calc A
+B+
+2
+O'Dette
+Physics 1
+A-
+3
+None
+Lunch
+None
+4
+Gerber
+AP Lit
+A+
+5
+Ganas
+AP Psych
+B+
+6
+None
+Study Hall
+None
+7
+Lernor
+Spanish 3
+A-
+8
+Johnny Starr
+Moon
+AP Calc BC
+A
+1
+Schaffer
+English 2/H
+B+
+2
+Carlson
+Honors Chemistry
+A-
+3
+Schmidt
+AP US History
+C+
+4
+Denna
+AP Java
+A
+5
+Vlaming
+Sophomore Wellness
+A+
+6
+None
+Lunch
+None
+7
+Caballero
+Orchestra
+A
+8
+Raj Hooja
+Braverman
+AP Lit
+B+
+1
+Grattoni
+Multivariable Calculus
+A-
+2
+Crosse
+Electronics Technology
+A+
+3
+Schmidt
+AP US Politics and Government
+A-
+4
+None
+Lunch
+None
+5
+Moore
+Intership
+A
+6
+Hogrefe
+Advanced Basketball
+A+
+7
+Soto
+AP Spanish
+A
+8
+Shin Kim
+Hinojasa
+Adventure Ed
+A+
+1
+Acic
+Physics 1 and 2
+A-
+2
+Gerber
+Journal Writing
+A+
+3
+None
+Lunch
+None
+4
+Johnson
+Child Development
+B+
+5
+Hays
+AP Stats
+B+
+6
+Hardy
+PLTW
+A-
+7
+Goetsche
+Algebra
+B+
+8
+Kathermye Srisha
+Crosse
+Computer Repair
+A-
+1
+Han
+AP Lang
+B+
+2
+Teberg
+Honors Chemistry
+A-
+3
+Dickens
+AP World History
+B
+4
+Nichols
+Intro to Computer Science
+A+
+5
+Vlaming
+Yoga
+A-
+6
+None
+Study Hall
+None
+7
+Caballero
+Orchestra
+A
+8
+Wilbur Smith
+Newby
+Freshman Wellness
+A
+1
+Higgins
+Honors Geometry
+A-
+2
+Scianna
+Honors Biology
+B+
+3
+Ganas
+AP Psych
+B+
+4
+Klien
+English
+A
+5
+None
+Lunch
+None
+6
+Newmark
+French 2
+A-
+7
+None
+Study Hall
+None
+8
