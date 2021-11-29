@@ -27,10 +27,32 @@ public class ScheduleTesterClass {
         // Begin File Reading
         File studentData = new File("studentScheduleData.txt"); // Create File Object
         Scanner inF = new Scanner(studentData);                          // Create Scanner Object for the text file hehe
+
         System.out.println("*** BEGIN FILE READ ***");
-        System.out.println(inF.nextInt());
-        inF.nextLine(); //Dummy read to skip the line break
-        System.out.println(inF.nextLine());
+        int numStudents = inF.nextInt();
+        inF.nextLine(); //Dummy read to skip the line break "\n"
+
+        // Create loop to read all data in the "studentScheduleData.txt" file
+        while(inF.hasNextLine()){
+            String studentName = inF.nextLine();
+            Course[] studentSchedule = new Course[8]; // All values start as null hehe
+            for(int i = 0; i < 8; i++){ // Runs once for each course
+                String teacherName = inF.nextLine();
+                String courseName = inF.nextLine();
+                String studentGrade = inF.nextLine();
+                int period = inF.nextInt();
+                inF.nextLine(); //Dummy read to skip the line break "\n"
+                // Create Course Object
+                Course tempCourse = new Course(teacherName, studentGrade, courseName, period);
+
+                // Add Course object to student schedule array
+                studentSchedule[i] = tempCourse;
+            }
+            Student stu = new Student(studentName, studentSchedule);
+            System.out.println(stu);
+        }
+
+
 
     }
 }
