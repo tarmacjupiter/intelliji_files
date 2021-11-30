@@ -31,6 +31,9 @@ public class ScheduleTesterClass {
         System.out.println("*** BEGIN FILE READ ***");
         int numStudents = inF.nextInt();
         inF.nextLine(); //Dummy read to skip the line break "\n"
+        Student[] stuList = new Student[numStudents]; // Create array of student objects
+        int index = 0;
+
 
         // Create loop to read all data in the "studentScheduleData.txt" file
         while(inF.hasNextLine()){
@@ -41,18 +44,52 @@ public class ScheduleTesterClass {
                 String courseName = inF.nextLine();
                 String studentGrade = inF.nextLine();
                 int period = inF.nextInt();
-                inF.nextLine(); //Dummy read to skip the line break "\n"
-                // Create Course Object
-                Course tempCourse = new Course(teacherName, studentGrade, courseName, period);
 
+                // Check if there is another character
+                if(inF.hasNextLine()){
+                    inF.nextLine();//Dummy read to skip the line break "\n"
+                }
+                Course tempCourse;
+                // test if the grade is "None"
+                if(studentGrade.equals("None")){
+                    tempCourse = new Course(courseName, period);
+                } else {
+                // Create Course Object
+                    tempCourse = new Course(teacherName, studentGrade, courseName, period);
+                }
                 // Add Course object to student schedule array
                 studentSchedule[i] = tempCourse;
+
+
             }
             Student stu = new Student(studentName, studentSchedule);
-            System.out.println(stu);
+
+            // Add the Student to "stuList"
+            stuList[index] = stu;
+            index++;
         }
-
-
-
+        // Call the printAll methos to display all Students
+        printAll(stuList);
     }
+
+
+    // Create printAll static method that displays every student
+    public static void printAll(Student[] arr) {
+        // Traditional for loop
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] != null){
+                System.out.println(arr[i]);
+            }
+        }
+    }
+    /*
+        public static void printAll(Student[] arr) {
+        // Enhanced for loop
+        for (Student tempStudent : arr) {
+            if (tempStudent != null) {
+                System.out.println(tempStudent);
+            }
+        }
+    }
+     */
 }
