@@ -2,27 +2,25 @@ package unit_6.lab;
 
 public class Question {
     // Instance Variables
-    private String question, choiceOne, choiceTwo, choiceThree, choiceFour;
-    private int valueOne, valueTwo, valueThree, valueFour;
+    private String question, choiceOne, choiceTwo, choiceThree, choiceFour, answer;
 
     // Full Constructor
-    public Question(String question, String choiceOne, String choiceTwo, String choiceThree, String choiceFour, int valueOne, int valueTwo, int valueThree, int valueFour) {
+
+
+    public Question(String question, String choiceOne, String choiceTwo, String choiceThree, String choiceFour, String answer) {
         this.question = question;
         this.choiceOne = choiceOne;
         this.choiceTwo = choiceTwo;
         this.choiceThree = choiceThree;
         this.choiceFour = choiceFour;
-        this.valueOne = valueOne;
-        this.valueTwo = valueTwo;
-        this.valueThree = valueThree;
-        this.valueFour = valueFour;
+        this.answer = answer;
     }
 
     //toString method
     public String toString(){
         String output = "";
         output += question + "\n";
-        output += "\t" + choiceOne + "\n";
+        output += "\t"+ choiceOne + "\n";
         output += "\t" + choiceTwo + "\n";
         output += "\t" + choiceThree + "\n";
         output += "\t" + choiceFour + "\n";
@@ -70,35 +68,11 @@ public class Question {
         this.choiceFour = choiceFour;
     }
 
-    public int getValueOne() {
-        return valueOne;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setValueOne(int valueOne) {
-        this.valueOne = valueOne;
-    }
-
-    public int getValueTwo() {
-        return valueTwo;
-    }
-
-    public void setValueTwo(int valueTwo) {
-        this.valueTwo = valueTwo;
-    }
-
-    public int getValueThree() {
-        return valueThree;
-    }
-
-    public void setValueThree(int valueThree) {
-        this.valueThree = valueThree;
-    }
-
-    public int getValueFour() {
-        return valueFour;
-    }
-
-    public void setValueFour(int valueFour) {
-        this.valueFour = valueFour;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }
