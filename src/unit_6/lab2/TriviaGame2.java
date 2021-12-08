@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class TriviaGame2 {
+    //Instance variables
     private static Questions2[] questions2s;
     private static String[] answersForQuestions;
     private static int numOfQuestions;
@@ -23,11 +24,14 @@ public class TriviaGame2 {
     So that when we call questions2s[1] or question2s[0] we get those particular
     indexes from the array
      */
+    // Call Scanner object to use scanner in Constructor!
     Scanner scan = new Scanner(System.in);
 
     public TriviaGame2() throws FileNotFoundException {
         System.out.println("Which quiz would you like to play?");
-        System.out.println("Type 1 for Computer Quiz or 2 for Cool Quiz");
+        System.out.println("(Please type the number for the corresponding quiz!)");
+        System.out.println("\t1.\tComputer Science");
+        System.out.println("\t2.\tCool Quiz");
         int num = scan.nextInt();
         if(num == 1){
             readQuestions("compsci");
@@ -67,13 +71,21 @@ public class TriviaGame2 {
         }
 //        answersForQuestions = answersList;
         questions2s = qList;
+        //Convert Arrays into Lists
         List<Questions2> randoQsList = Arrays.asList(qList);
         List<String> randoAsList = Arrays.asList((answersList));
+
+        //Create long variable that stores the position of the computers time by the nanosecond
         long seed = System.nanoTime();
 
+        /*
+        Use the shuffle method in the Collections library to randomize the lists,
+        also randomize the lists by a predetermined randomness from the "seed" variable
+        */
         Collections.shuffle(randoQsList, new Random(seed));
         Collections.shuffle(randoAsList, new Random(seed));
 
+        //Convert the lists back into an array, and store them into the instance variables
         randomizedQuestions = randoQsList.toArray(qList);
         answersForQuestions = randoAsList.toArray((answersList));
     }
