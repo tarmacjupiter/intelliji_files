@@ -1,4 +1,4 @@
-3
+4
 Do pineapples belong on pizza?
 Yes
 No
@@ -11,9 +11,15 @@ Yes
 Yes
 Yes
 Yes
-Is a Hot Dog a sandwich
+Is a Hot Dog a sandwich?
 Yes
 No
 Maybe
 Im hungry
-Yes
+No
+Which is the best starting Pokémon?
+Bulbasaur
+Charmander
+Squirtle
+Pikachu
+Charmander

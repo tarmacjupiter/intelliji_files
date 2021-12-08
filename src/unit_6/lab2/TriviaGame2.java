@@ -1,13 +1,19 @@
 package unit_6.lab2;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+import java.util.Random;
 
 public class TriviaGame2 {
     private static Questions2[] questions2s;
     private static String[] answersForQuestions;
     private static int numOfQuestions;
+    private static Questions2[] randomizedQuestions;
     //We want an array full of question objects
 
     /*
@@ -17,12 +23,21 @@ public class TriviaGame2 {
     So that when we call questions2s[1] or question2s[0] we get those particular
     indexes from the array
      */
+    Scanner scan = new Scanner(System.in);
+
     public TriviaGame2() throws FileNotFoundException {
-        readQuestions();
+        System.out.println("Which quiz would you like to play?");
+        System.out.println("Type 1 for Computer Quiz or 2 for Cool Quiz");
+        int num = scan.nextInt();
+        if(num == 1){
+            readQuestions("compsci");
+        } else if(num == 2){
+            readQuestions("questions");
+        }
     }
 
-    public static void readQuestions() throws FileNotFoundException {
-        File questionData = new File("questions.txt");
+    public static void readQuestions(String fileName) throws FileNotFoundException {
+        File questionData = new File(fileName + ".txt");
         Scanner inF = new Scanner(questionData);
         Scanner sb = new Scanner(System.in);
 
@@ -50,8 +65,17 @@ public class TriviaGame2 {
             qList[index] = temp;
             index++;
         }
-        answersForQuestions = answersList;
+//        answersForQuestions = answersList;
         questions2s = qList;
+        List<Questions2> randoQsList = Arrays.asList(qList);
+        List<String> randoAsList = Arrays.asList((answersList));
+        long seed = System.nanoTime();
+
+        Collections.shuffle(randoQsList, new Random(seed));
+        Collections.shuffle(randoAsList, new Random(seed));
+
+        randomizedQuestions = randoQsList.toArray(qList);
+        answersForQuestions = randoAsList.toArray((answersList));
     }
 
     //Getters and Setters
@@ -64,8 +88,8 @@ public class TriviaGame2 {
         TriviaGame2.questions2s = questions2s;
     }
 
-    public static String getAnswersForQuestions(int num) {
-        return answersForQuestions[num];
+    public static String[] getAnswersForQuestions() {
+        return answersForQuestions;
     }
 
     public static void setAnswersForQuestions(String[] answersForQuestions) {
@@ -78,5 +102,13 @@ public class TriviaGame2 {
 
     public static void setNumOfQuestions(int numOfQuestions) {
         TriviaGame2.numOfQuestions = numOfQuestions;
+    }
+
+    public static Questions2[] getRandomizedQuestions() {
+        return randomizedQuestions;
+    }
+
+    public static void setRandomizedQuestions(Questions2[] randomizedQuestions) {
+        TriviaGame2.randomizedQuestions = randomizedQuestions;
     }
 }
