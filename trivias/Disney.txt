@@ -1,0 +1,67 @@
+11
+"Circle of Life":
+Coco
+Aladdin
+The Loin King
+Frozen
+The Loin King
+"Let It Go":
+Bambi
+Dumbo
+Frozen
+Monsters, Inc.
+Frozen
+"You're Welcome"
+Zootopia
+Big Hero 6
+Moana
+The Little Mermaid
+Moana
+"I'll make a Man Out of You":
+Tarzan
+The AristoCats
+Peter Pan
+Mulan
+Mulan
+"Under the Sea":
+Bolt
+The Little Mermaid
+The Emperor's New Groove
+The Jungle Book
+The Little Mermaid
+"You've got a Friend in Me":
+Tangled
+Lilo and Stitch
+Toy Story
+Wreck-It Ralph
+Toy Story
+"Remember Me":
+Zootopia
+Cinderella
+Coco
+Pocahontas
+Coco
+"When You Wish upon a Star":
+Pinocchio
+Bambi
+Cinderella
+The Little Mermaid
+Pinocchio
+"Be Our Guest":
+The Princess and the Frog
+Beauty and the Beast
+Encanto
+Hercules
+Beauty and the Beast
+"A Whole New World":
+Snow White and the Seven Dwarfs
+Sleeping Beauty
+Raya and the Last Dragon
+Aladdin
+Aladdin
+"Zero to Hero":
+Bambi
+Hercules
+Coco
+Cinderella
+Hercules

@@ -8,7 +8,7 @@ public class TriviaTester2 {
         TriviaGame2 game = new TriviaGame2();
         Scanner sb = new Scanner(System.in);
 
-        System.out.println("***BEGIN AMAZING TRIVIA GAME***\n");
+        System.out.println("***BEGIN TRIVIA GAME***\n");
 
         Questions2[] arr = game.getRandomizedQuestions();
         String[] arrAnswers = game.getAnswersForQuestions();
@@ -22,6 +22,17 @@ public class TriviaTester2 {
                 System.out.println("This is the right answer!\n");
             } else {
                 System.out.println("This is the wrong answer!\n");
+            }
+
+            System.out.println("Do you want to continue?\n('Yes' or 'No')");
+            String continueStatus = sb.nextLine().toLowerCase();
+            while(!continueStatus.equals("yes")){
+                if(continueStatus.equals("no")){
+                    System.out.println("Thank you for playing!");
+                    return;
+                }
+                System.out.println("This is not a valid input!\nPlease type ('Yes' or 'No')");
+                continueStatus = sb.nextLine().toLowerCase();
             }
         }
 

@@ -30,18 +30,21 @@ public class TriviaGame2 {
     public TriviaGame2() throws FileNotFoundException {
         System.out.println("Which quiz would you like to play?");
         System.out.println("(Please type the number for the corresponding quiz!)");
-        System.out.println("\t1.\tComputer Science");
-        System.out.println("\t2.\tCool Quiz");
+        System.out.println("\t1.\tGuess the Christmas Song");
+        System.out.println("\t2.\tGuess the Disney Song");
+        System.out.println("\t3.\tSquid Game Quiz");
         int num = scan.nextInt();
         if(num == 1){
-            readQuestions("compsci");
+            readQuestions("ChristmasQuestions");
         } else if(num == 2){
-            readQuestions("questions");
+            readQuestions("Disney");
+        } else if(num == 3){
+            readQuestions("SquidGame");
         }
     }
 
     public static void readQuestions(String fileName) throws FileNotFoundException {
-        File questionData = new File(fileName + ".txt");
+        File questionData = new File("trivias/" + fileName + ".txt");
         Scanner inF = new Scanner(questionData);
         Scanner sb = new Scanner(System.in);
 
