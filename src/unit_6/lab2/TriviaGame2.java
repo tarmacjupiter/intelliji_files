@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class TriviaGame2 {
     private static Questions2[] questions2s;
+    private static String[] answersForQuestions;
+    private static int numOfQuestions;
     //We want an array full of question objects
 
     /*
@@ -25,11 +27,13 @@ public class TriviaGame2 {
         Scanner sb = new Scanner(System.in);
 
         // Read the total number of Questions
-        int numQuestions = inF.nextInt();
+        numOfQuestions = inF.nextInt();
         inF.nextLine();
 
         //Create empty array to later assign to questions2s
-        Questions2[] qList = new Questions2[numQuestions];
+        Questions2[] qList = new Questions2[numOfQuestions];
+        //Create empty array for answers
+        String[] answersList = new String[numOfQuestions];
 
         // Variable to count indexes
         int index = 0;
@@ -42,9 +46,11 @@ public class TriviaGame2 {
             String q4 = inF.nextLine();
             String answer = inF.nextLine();
             Questions2 temp = new Questions2(question, q1, q2, q3, q4, answer);
+            answersList[index] = answer;
             qList[index] = temp;
             index++;
         }
+        answersForQuestions = answersList;
         questions2s = qList;
     }
 
@@ -56,5 +62,21 @@ public class TriviaGame2 {
 
     public static void setQuestions2s(Questions2[] questions2s) {
         TriviaGame2.questions2s = questions2s;
+    }
+
+    public static String getAnswersForQuestions(int num) {
+        return answersForQuestions[num];
+    }
+
+    public static void setAnswersForQuestions(String[] answersForQuestions) {
+        TriviaGame2.answersForQuestions = answersForQuestions;
+    }
+
+    public static int getNumOfQuestions() {
+        return numOfQuestions;
+    }
+
+    public static void setNumOfQuestions(int numOfQuestions) {
+        TriviaGame2.numOfQuestions = numOfQuestions;
     }
 }
