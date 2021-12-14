@@ -19,10 +19,10 @@ public class Questions2 {
     public String toString(){
         String output = "";
         output += question + "\n";
-        output += "\t"+ q1 + "\n";
-        output += "\t" + q2 + "\n";
-        output += "\t" + q3 + "\n";
-        output += "\t" + q4 + "\n";
+        output += "\t"+ "A.\t" + q1 + "\n";
+        output += "\t" + "B.\t" + q2 + "\n";
+        output += "\t" + "C.\t" + q3 + "\n";
+        output += "\t" + "D.\t" + q4 + "\n";
         return output;
     }
 

@@ -16,6 +16,9 @@ public class TriviaGame2 {
     private static int numOfQuestions;
     private static Questions2[] randomizedQuestions;
     //We want an array full of question objects
+    private int correct;
+    private int wrong;
+    private int streak;
 
     /*
     When we call the TriviaGame2 constructor we want questions to be pushed
@@ -24,15 +27,22 @@ public class TriviaGame2 {
     So that when we call questions2s[1] or question2s[0] we get those particular
     indexes from the array
      */
+
     // Call Scanner object to use scanner in Constructor!
     Scanner scan = new Scanner(System.in);
 
+
+    // Constructor
     public TriviaGame2() throws FileNotFoundException {
+        this.correct = 0;
+        this.wrong = 0;
+        this.streak = 0;
         System.out.println("Which quiz would you like to play?");
         System.out.println("(Please type the number for the corresponding quiz!)");
         System.out.println("\t1.\tGuess the Christmas Song");
         System.out.println("\t2.\tGuess the Disney Song");
         System.out.println("\t3.\tSquid Game Quiz");
+        System.out.println("\t4.\tPineapples on Pizza");
         int num = scan.nextInt();
         if(num == 1){
             readQuestions("ChristmasQuestions");
@@ -40,6 +50,8 @@ public class TriviaGame2 {
             readQuestions("Disney");
         } else if(num == 3){
             readQuestions("SquidGame");
+        } else if(num == 4){
+            readQuestions("questions");
         }
     }
 
@@ -125,5 +137,29 @@ public class TriviaGame2 {
 
     public static void setRandomizedQuestions(Questions2[] randomizedQuestions) {
         TriviaGame2.randomizedQuestions = randomizedQuestions;
+    }
+
+    public int getCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(int correct) {
+        this.correct = correct;
+    }
+
+    public int getWrong() {
+        return wrong;
+    }
+
+    public void setWrong(int wrong) {
+        this.wrong = wrong;
+    }
+
+    public int getStreak() {
+        return streak;
+    }
+
+    public void setStreak(int streak) {
+        this.streak = streak;
     }
 }

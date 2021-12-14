@@ -4,64 +4,64 @@ Coco
 Aladdin
 The Loin King
 Frozen
-The Loin King
+C
 "Let It Go":
 Bambi
 Dumbo
 Frozen
 Monsters, Inc.
-Frozen
+C
 "You're Welcome"
 Zootopia
 Big Hero 6
 Moana
 The Little Mermaid
-Moana
+C
 "I'll make a Man Out of You":
 Tarzan
 The AristoCats
 Peter Pan
 Mulan
-Mulan
+D
 "Under the Sea":
 Bolt
 The Little Mermaid
 The Emperor's New Groove
 The Jungle Book
-The Little Mermaid
+C
 "You've got a Friend in Me":
 Tangled
 Lilo and Stitch
 Toy Story
 Wreck-It Ralph
-Toy Story
+C
 "Remember Me":
 Zootopia
 Cinderella
 Coco
 Pocahontas
-Coco
+C
 "When You Wish upon a Star":
 Pinocchio
 Bambi
 Cinderella
 The Little Mermaid
-Pinocchio
+A
 "Be Our Guest":
 The Princess and the Frog
 Beauty and the Beast
 Encanto
 Hercules
-Beauty and the Beast
+B
 "A Whole New World":
 Snow White and the Seven Dwarfs
 Sleeping Beauty
 Raya and the Last Dragon
 Aladdin
-Aladdin
+D
 "Zero to Hero":
 Bambi
 Hercules
 Coco
 Cinderella
-Hercules
+B

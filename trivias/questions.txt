@@ -1,25 +1,7 @@
-4
+1
 Do pineapples belong on pizza?
 Yes
 No
 Maybe
-This quiz is stupid
-No
-Is Mr. Nichols the best teacher ever?
-Yes
-Yes
-Yes
-Yes
-Yes
-Is a Hot Dog a sandwich?
-Yes
-No
-Maybe
-Im hungry
-No
-Which is the best starting Pokémon?
-Bulbasaur
-Charmander
-Squirtle
-Pikachu
-Charmander
+Who cares
+B
