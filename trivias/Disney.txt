@@ -2,7 +2,7 @@
 "Circle of Life":
 Coco
 Aladdin
-The Loin King
+The Lion King
 Frozen
 C
 "Let It Go":
@@ -28,7 +28,7 @@ Bolt
 The Little Mermaid
 The Emperor's New Groove
 The Jungle Book
-C
+B
 "You've got a Friend in Me":
 Tangled
 Lilo and Stitch

@@ -21,9 +21,9 @@ public class TriviaTester2 {
         String[] arrAnswers = game.getAnswersForQuestions();
         Scanner sb = new Scanner(System.in);
         // Scores, update during game
-        int correct = game.getCorrect();
-        int wrong = game.getWrong();
-        int answerStreak = game.getStreak();
+        int correct = 0;
+        int wrong = 0;
+        int answerStreak = 0;
 
         //Total correct to divide by later
         int answeredQuestions = 5 * game.getAnswersForQuestions().length;
@@ -83,6 +83,3 @@ public class TriviaTester2 {
         }
     }
 }
-
-
-
