@@ -9,7 +9,7 @@ public class TriviaTester2 {
         System.out.println("***BEGIN TRIVIA GAME***\n");
         startQuiz();
     }
-
+    //Checking for git connection
     /**
      * The chunk of the program, accesses the TriviaGame2 class and runs through the logistics of the game
      * @throws FileNotFoundException "Signals that an attempt to open the file denoted by a specified pathname has failed"
