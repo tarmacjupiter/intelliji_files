@@ -1,6 +1,7 @@
 package unit_7.in_class;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ArrayListsEx {
     public static void main(String[] args) {
@@ -71,6 +72,8 @@ public class ArrayListsEx {
         System.out.println();
         removeEvensBackward(vals);
         System.out.println("Calling, 'removeEvensBackward' works on removing the correct indices");
+
+        System.out.println();
     }
     /**
      * This method will count and return how many values in the ArrayList nums
