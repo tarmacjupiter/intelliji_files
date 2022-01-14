@@ -1,6 +1,9 @@
 package unit_7.in_class;
 
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * In this java file we will explore these key algorithms with ArrayLists
@@ -52,6 +55,7 @@ public class ArrayListsAlgor {
         names.add("Sanjana");
         names.add("Adi");
         names.add("Noah");
+        names.add("Anthony");
     }
 
     /**
@@ -113,42 +117,67 @@ public class ArrayListsAlgor {
 
         return sum / count;
     }
-//
-//    /**
-//     * Determines if all values are in increasing order
-//     * @param list
-//     * @return true or false if increasing
-//     */
-//    public static boolean isIncreasing(ArrayList<Integer> list) {
-//
-//    }
-//
-//    /**
-//     * Checks if any values within the ArrayList are repeated anywhere else
-//     * in the ArrayList
-//     * @param list
-//     * @return true if any values are repeated, false otherwise
-//     */
-//    public static boolean hasDuplicates(ArrayList<String> list) {
-//
-//    }
-//
-//    /**
-//     * Creates a new ArrayList of Strings that is equal to the original ArrayList
-//     * in reverse order.  Original ArrayList is unchanged.
-//     * @param list
-//     * @return new ArrayList of Strings in reverse order
-//     */
-//    public static ArrayList<String> revArrayList(ArrayList<String> list) {
-//
-//    }
-//
-//    /**
-//     * Shifts all values in list to the Left and the value at index 0 is moved
-//     * to index list.size() - 1.
-//     * @param list
-//     */
-//    public static void shiftLeft(ArrayList<String> list) {
-//
-//    }
+
+    /**
+     * Determines if all values are in increasing order
+     * @param list
+     * @return true or false if increasing
+     */
+    public static boolean isIncreasing(ArrayList<Integer> list) {
+        for(int i = list.size() - 1; i > 0; i--){
+            if(list.get(i) < list.get(i - 1)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Checks if any values within the ArrayList are repeated anywhere else
+     * in the ArrayList
+     * @param list
+     * @return true if any values are repeated, false otherwise
+     */
+    public static boolean hasDuplicates(ArrayList<String> list) {
+        Collections.sort(list);
+        for(int i = 0; i < list.size() - 1; i++){
+            if(list.get(i).equals(list.get(i + 1))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Creates a new ArrayList of Strings that is equal to the original ArrayList
+     * in reverse order.  Original ArrayList is unchanged.
+     * @param list
+     * @return new ArrayList of Strings in reverse order
+     */
+    public static ArrayList<String> revArrayList(ArrayList<String> list) {
+        ArrayList<String> temp = new ArrayList<String>();
+
+        for(int i = list.size() - 1; i >= 0; i--){
+            temp.add(list.get(i));
+        }
+
+        return temp;
+    }
+
+    /**
+     * Shifts all values in list to the Left and the value at index 0 is moved
+     * to index list.size() - 1.
+     * @param list
+     */
+    public static void shiftLeft(ArrayList<String> list) {
+        String lastName = list.get(list.size() - 1);
+
+        for(int i = list.size() - 1; i > 0; i--){
+            list.set(i, list.get(i - 1));
+        }
+
+        list.set(0, lastName);
+
+        System.out.println(list);
+}
 }
