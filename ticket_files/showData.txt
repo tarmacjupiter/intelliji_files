@@ -1,0 +1,24 @@
+02-14-22 124.75 52 Beyonce, Chicago
+08-04-22 109.55 9 Ariana Grande, Las Vegas
+05-01-22 85.97 178 Bon Jovi, New York
+04-03-22 45.60 88 Justin Beiber, Chicago
+04-26-22 127.50 1 Laughing Yogi, Chicago
+09-12-22 901.55 10 Chantal Dubois, Paris
+05-18-22 90.92 20 Vincenzo Cassano, Venice
+01-03-22 55.60 15 Kanye West, Toronto
+03-27-22 100.30 47 Jack Black, Los Angelos
+08-10-22 542.55 12 Bobby Wasabi, Paris
+02-15-22 35.43 178 Big D, New York City
+07-25-22 150.60 88 Travis Scott, Boulder
+09-14-22 189.79 25 Sean Mendez, Chicago
+06-04-22 109.55 31 Kanye West, San Francisco
+03-09-22 905.97 340 Dwij Bhatt, Palatine
+05-29-22 45.60 100 Justin Beiber, Denver
+02-30-22 124.75 2 Camillo Cabella, San Francisco
+05-23-22 809.55 30 Pink Floyd, Dubai
+10-13-22 102.12 23 Vincenzo Cassano, Rome
+12-08-22 45.45 67 Justin Beiber, Miami
+07-14-22 1.75 57 Lil Nas X, Seattle
+04-01-22 20.55 103 A.R Rahman, Paris
+10-04-22 15.80 543 Sonu Nigam, Delhi
+04-05-22 39.24 534 Arijit Singh, Mumbai
