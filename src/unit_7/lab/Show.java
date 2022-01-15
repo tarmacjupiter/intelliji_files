@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Show {
     private String date;
-    private int price;
+    private double price;
     private int quant;
     private String performer;
     private String city;
 
-    public Show(String date, int price, int quant, String performer, String city) {
+    public Show(String date, double price, int quant, String performer, String city) {
         this.date = date;
         this.price = price;
         this.quant = quant;
@@ -18,15 +18,11 @@ public class Show {
 
     }
 
-    @Override
-    public String toString() {
-        return "Show{" +
-                "date='" + date + '\'' +
-                ", price=" + price +
-                ", quantity=" + quant +
-                ", performer='" + performer + '\'' +
-                ", city='" + city + '\'' +
-                '}';
+    public String toString(){
+        String output = "";
+//        output += "Date\t\tPrice\tQuantity\tPerformer\tCity\n";
+        output += date + "\t" + "$" + price + "\t\t" + quant + "\t\t" + performer + "\t" + city;
+        return output;
     }
 
     public String getDate() {
@@ -37,7 +33,7 @@ public class Show {
         this.date = date;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

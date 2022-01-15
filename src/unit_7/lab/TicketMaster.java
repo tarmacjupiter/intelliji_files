@@ -23,12 +23,23 @@ public class TicketMaster {
     private ArrayList<Show> shows;
 
     public TicketMaster() throws FileNotFoundException {
+
+
         File ticketData = new File("ticket_files/showData.txt");
         Scanner inF = new Scanner(ticketData);
 
         while(inF.hasNextLine()){
+            inF.useDelimiter("\\s");
             String date = inF.next();
-            System.out.println(date);
+            double price = inF.nextDouble();
+            int quantity = inF.nextInt();
+            inF.useDelimiter(",");
+            String performer = inF.next();
+            inF.useDelimiter("\\s");
+            inF.next();
+            String city = inF.nextLine();
+            Show tempShow = new Show(date, price, quantity, performer, city);
+            System.out.println(tempShow);
         }
 
     }
@@ -50,10 +61,16 @@ public class TicketMaster {
     }
 
 
-    @Override
-    public String toString() {
-        return "TicketMaster{" +
-                "shows=" + shows +
-                '}';
+    public String toString(){
+        String output = null;
+        output += "Date\tPrice\tQuantity\tPerformer\tCity\n";
+        for (Show show : shows) {
+            output += show.getDate() + "\t";
+            output += show.getPrice() + "\t";
+            output += show.getQuant() + "\t";
+            output += show.getPerformer() + "\t";
+            output += show.getCity() + "\t\n";
+        }
+        return output;
     }
 }
