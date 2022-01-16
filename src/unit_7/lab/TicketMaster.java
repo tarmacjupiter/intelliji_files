@@ -50,7 +50,7 @@ public class TicketMaster {
 
     public ArrayList<Show> filterCity(ArrayList<Show> shows, String cityName){
         ArrayList<Show> temp = new ArrayList<>();
-        for(int i = shows.size() - 1; i >= 0; i--){
+        for(int i = 0; i < shows.size(); i++){
             if(shows.get(i).getCity().equals(cityName)){
                 temp.add(shows.get(i));
             }
@@ -65,15 +65,6 @@ public class TicketMaster {
     public void setShows(ArrayList<Show> shows) {
         this.shows = shows;
     }
-
-    public int countArray(int num){
-        int count = 0;
-        for(Show tempShow : shows){
-            count++;
-        }
-        return count + num;
-    }
-
 
     public String toString(){
         String output = "";
@@ -115,8 +106,15 @@ public class TicketMaster {
         return temp;
     }
 
-//    public ArrayList<Show> sortByPriceTop(){
-//        ArrayList<Show> temp = shows;
-//        temp.sort(Comparator.comparingInt(Show::));
-//    }
+    public ArrayList<Show> sortByPriceTop(){
+        ArrayList<Show> temp = shows;
+        temp.sort(Comparator.comparingDouble(Show::getPrice));
+        return temp;
+    }
+
+    public ArrayList<Show> sortByPriceBot(){
+        ArrayList<Show> temp = shows;
+        temp.sort((o1, o2) -> Double.compare(o2.getPrice(), o1.getPrice()));
+        return temp;
+    }
 }
