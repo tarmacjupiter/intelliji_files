@@ -17,14 +17,18 @@ All other methods you will have in this class
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class TicketMaster {
     private ArrayList<Show> shows;
 
-    public TicketMaster() throws FileNotFoundException {
+    public TicketMaster() {
+        this.shows = new ArrayList<>();
+    }
 
-
+    public void readData() throws FileNotFoundException {
         File ticketData = new File("ticket_files/showData.txt");
         Scanner inF = new Scanner(ticketData);
 
@@ -37,11 +41,21 @@ public class TicketMaster {
             String performer = inF.next();
             inF.useDelimiter("\\s");
             inF.next();
-            String city = inF.nextLine();
-            Show tempShow = new Show(date, price, quantity, performer, city);
-            System.out.println(tempShow);
+            String tempCity = inF.nextLine();
+            String city = tempCity.substring(1);
+            Show temp = new Show(date, price, quantity, performer, city);
+            shows.add(temp);
         }
+    }
 
+    public ArrayList<Show> filterCity(ArrayList<Show> shows, String cityName){
+        ArrayList<Show> temp = new ArrayList<>();
+        for(int i = shows.size() - 1; i >= 0; i--){
+            if(shows.get(i).getCity().equals(cityName)){
+                temp.add(shows.get(i));
+            }
+        }
+        return temp;
     }
 
     public ArrayList<Show> getShows() {
@@ -62,15 +76,47 @@ public class TicketMaster {
 
 
     public String toString(){
-        String output = null;
-        output += "Date\tPrice\tQuantity\tPerformer\tCity\n";
+        String output = "";
+        output += "Date\t\tPrice\t\tQuantity\tPerformer\t\tCity\n";
+        output += "____________________________________________________________________\n";
         for (Show show : shows) {
-            output += show.getDate() + "\t";
-            output += show.getPrice() + "\t";
-            output += show.getQuant() + "\t";
-            output += show.getPerformer() + "\t";
+            output += show.getDate() + "\t$";
+            output += show.getPrice() + "\t\t";
+            output += show.getQuant() + "\t\t\t";
+            output += show.getPerformer() + "\t\t";
             output += show.getCity() + "\t\n";
         }
         return output;
     }
+
+    public String organizeFiltered(ArrayList<Show> shows){
+        String output = "";
+        output += "Date\t\tPrice\t\tQuantity\tPerformer\t\t\tCity\n";
+        output += "____________________________________________________________________\n";
+        for(Show temp : shows){
+            output += temp.getDate() + "\t$";
+            output += temp.getPrice() + "\t\t";
+            output += temp.getQuant() + "\t\t\t";
+            output += temp.getPerformer() + "\t\t";
+            output += temp.getCity() + "\t\n";
+        }
+        return output;
+    }
+
+    public ArrayList<Show> filterPerformerTop(){
+        ArrayList<Show> temp = shows;
+        temp.sort(Comparator.comparing(Show::getPerformer));
+        return temp;
+    }
+
+    public ArrayList<Show> filterPerformerDown(){
+        ArrayList<Show> temp = shows;
+        temp.sort((o1, o2) -> o2.getPerformer().compareTo(o1.getPerformer()));
+        return temp;
+    }
+
+//    public ArrayList<Show> sortByPriceTop(){
+//        ArrayList<Show> temp = shows;
+//        temp.sort(Comparator.comparingInt(Show::));
+//    }
 }
