@@ -17,21 +17,19 @@ All other methods you will have in this class
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
 public class TicketMaster {
     private ArrayList<Show> shows;
+    File ticketData = new File("ticket_files/showData.txt");
+    Scanner inF = new Scanner(ticketData);
 
-    public TicketMaster() {
+    public TicketMaster() throws FileNotFoundException {
         this.shows = new ArrayList<>();
     }
 
     public void readData() throws FileNotFoundException {
-        File ticketData = new File("ticket_files/showData.txt");
-        Scanner inF = new Scanner(ticketData);
-
         while(inF.hasNextLine()){
             inF.useDelimiter("\\s");
             String date = inF.next();
@@ -46,6 +44,8 @@ public class TicketMaster {
             Show temp = new Show(date, price, quantity, performer, city);
             shows.add(temp);
         }
+
+        inF.close();
     }
 
     public ArrayList<Show> filterCity(ArrayList<Show> shows, String cityName){
@@ -75,6 +75,9 @@ public class TicketMaster {
             output += show.getPrice() + "\t\t";
             output += show.getQuant() + "\t\t\t";
             output += show.getPerformer() + "\t\t";
+//            while(output.length() < 50){
+//                output += "\t";
+//            }
             output += show.getCity() + "\t\n";
         }
         return output;

@@ -1,7 +1,5 @@
 package unit_7.lab;
 
-import java.util.ArrayList;
-
 public class Show {
     private String date;
     private double price;
