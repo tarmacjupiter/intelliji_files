@@ -19,7 +19,14 @@ public class Show {
     public String toString(){
         String output = "";
 //        output += "Date\t\tPrice\tQuantity\tPerformer\tCity\n";
-        output += date + "\t" + "$" + price + "\t\t" + quant + "\t\t\t" + performer + "\t" + city;
+        output += date + "\t";
+        output += price + "\t\t";
+        output += quant + "\t\t\t";
+        output += performer;
+        while(output.length() < 51){
+            output += " ";
+        }
+        output += "\t" + city;
         return output;
     }
 

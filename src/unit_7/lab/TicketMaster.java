@@ -86,13 +86,9 @@ public class TicketMaster {
     public String organizeFiltered(ArrayList<Show> shows){
         String output = "";
         output += "Date\t\tPrice\t\tQuantity\tPerformer\t\t\tCity\n";
-        output += "____________________________________________________________________\n";
-        for(Show temp : shows){
-            output += temp.getDate() + "\t$";
-            output += temp.getPrice() + "\t\t";
-            output += temp.getQuant() + "\t\t\t";
-            output += temp.getPerformer() + "\t\t";
-            output += temp.getCity() + "\t\n";
+        output += "______________________________________________________________________________\n";
+        for(Show tempShow : shows){
+            output += tempShow + "\n";
         }
         return output;
     }
