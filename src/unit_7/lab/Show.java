@@ -20,10 +20,10 @@ public class Show {
         String output = "";
 //        output += "Date\t\tPrice\tQuantity\tPerformer\tCity\n";
         output += date + "\t";
-        output += price + "\t\t";
+        output += "$" + price + "\t\t";
         output += quant + "\t\t\t";
         output += performer;
-        while(output.length() < 51){
+        while(output.length() < 52){
             output += " ";
         }
         output += "\t" + city;

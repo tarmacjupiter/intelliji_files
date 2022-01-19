@@ -68,24 +68,17 @@ public class TicketMaster {
 
     public String toString(){
         String output = "";
-        output += "Date\t\tPrice\t\tQuantity\tPerformer\t\tCity\n";
-        output += "____________________________________________________________________\n";
-        for (Show show : shows) {
-            output += show.getDate() + "\t$";
-            output += show.getPrice() + "\t\t";
-            output += show.getQuant() + "\t\t\t";
-            output += show.getPerformer() + "\t\t";
-//            while(output.length() < 50){
-//                output += "\t";
-//            }
-            output += show.getCity() + "\t\n";
+        output += "Date\t\tPrice\t\tQuantity\t Performer\t\t\t\t\t\tCity\n";
+        output += "______________________________________________________________________________\n";
+        for(Show tempShow : shows){
+            output += tempShow + "\n";
         }
         return output;
     }
 
     public String organizeFiltered(ArrayList<Show> shows){
         String output = "";
-        output += "Date\t\tPrice\t\tQuantity\tPerformer\t\t\tCity\n";
+        output += "Date\t\tPrice\t\tQuantity\t Performer\t\t\t\t\t\tCity\n";
         output += "______________________________________________________________________________\n";
         for(Show tempShow : shows){
             output += tempShow + "\n";

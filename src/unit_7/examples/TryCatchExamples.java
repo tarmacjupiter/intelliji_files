@@ -7,8 +7,8 @@ public class TryCatchExamples {
         boolean isValid = true;
         while(isValid){
             try {
-                int[] nums = new int[4];
-                nums[4] = 5;
+//                int[] nums = new int[4];
+//                nums[4] = 5;
                 System.out.println("Please enter a number between 1-10");
                 Scanner inF = new Scanner(System.in);
                 int num = inF.nextInt();
