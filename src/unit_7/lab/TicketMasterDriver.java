@@ -5,9 +5,16 @@ import java.util.Scanner;
 
 public class TicketMasterDriver {
     public static void main(String[] args) throws FileNotFoundException {
+        //Bool value to keep user in while loop
         boolean isValid = true;
         TicketMaster tickets = new TicketMaster();
         tickets.readData();
+
+        // Saying hello to the user
+        System.out.println("Check out the NEW and coming up concerts!");
+
+        // Try-catch statement nested inside of a while loop, checking for primitive int data values
+        // for user input
         while(isValid){
             try {
                 System.out.println();
@@ -23,6 +30,7 @@ public class TicketMasterDriver {
                 Scanner sb = new Scanner(System.in);
                 int num = sb.nextInt();
 
+                // If-else statements which will call certain functions depending on user input
                 if(num == 1){
                     System.out.println(tickets);
                 } else if(num == 2){
@@ -39,6 +47,7 @@ public class TicketMasterDriver {
                     System.out.println("Goodbye!");
                     Thread.sleep(1000);
                     isValid = false;
+                    sb.close();
                 } else {
                     System.out.println();
                     System.out.println("Do you not know how to count to 7?");
@@ -51,6 +60,12 @@ public class TicketMasterDriver {
         }
     }
 
+    /**
+     * The "returnCityList" method keeps the user inside this function until "returnCityList" is done
+     * running, this function asks the user for a City they would like to filter by then is ran inside the
+     * Try-Catch statement
+     * @throws FileNotFoundException just in case a file was not found, or I was dumb enough to move it somewhere
+     */
     public static void returnCityList() throws FileNotFoundException {
         TicketMaster tickets = new TicketMaster();
         tickets.readData();

@@ -1,12 +1,14 @@
 package unit_7.lab;
 
 public class Show {
+    //Instance variables
     private String date;
     private double price;
     private int quant;
     private String performer;
     private String city;
 
+    // Full Constructor
     public Show(String date, double price, int quant, String performer, String city) {
         this.date = date;
         this.price = price;
@@ -16,9 +18,13 @@ public class Show {
 
     }
 
+    /**
+     * The "toString" function takes in and formats all the instances
+     * variables in a similar CSV or Excel format
+     * @return a String of all the formatted data
+     */
     public String toString(){
         String output = "";
-//        output += "Date\t\tPrice\tQuantity\tPerformer\tCity\n";
         output += date + "\t";
         output += "$" + price + "\t\t";
         output += quant + "\t\t\t";
@@ -30,6 +36,7 @@ public class Show {
         return output;
     }
 
+    // Getters and Setters
     public String getDate() {
         return date;
     }

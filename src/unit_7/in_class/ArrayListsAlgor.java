@@ -1,7 +1,6 @@
 package unit_7.in_class;
 
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -60,7 +59,7 @@ public class ArrayListsAlgor {
 
     /**
      * Finds the smallest value in the ArrayList
-     * @param list
+     * @param list ArrayList of Integers
      * @return returns its int value
      */
     public static int findMin(ArrayList<Integer> list) {
@@ -76,7 +75,7 @@ public class ArrayListsAlgor {
 
     /**
      * Finds the largest value in the ArrayList
-     * @param list
+     * @param list ArrayList of Integers
      * @return returns its int value
      */
     public static int findMax(ArrayList<Integer> list) {
@@ -91,7 +90,7 @@ public class ArrayListsAlgor {
 
     /**
      * Finds the sum of all values in the ArrayList
-     * @param list
+     * @param list ArrayList of Integers
      * @return returns the int value for the sum
      */
     public static int findSum(ArrayList<Integer> list) {
@@ -104,7 +103,7 @@ public class ArrayListsAlgor {
 
     /**
      * Finds the average as a double of all Integer values
-     * @param list
+     * @param list ArrayList of Integers
      * @return double average value
      */
     public static double findAverage(ArrayList<Integer> list) {
@@ -120,7 +119,7 @@ public class ArrayListsAlgor {
 
     /**
      * Determines if all values are in increasing order
-     * @param list
+     * @param list ArrayList of Integers
      * @return true or false if increasing
      */
     public static boolean isIncreasing(ArrayList<Integer> list) {
@@ -135,7 +134,7 @@ public class ArrayListsAlgor {
     /**
      * Checks if any values within the ArrayList are repeated anywhere else
      * in the ArrayList
-     * @param list
+     * @param list ArrayList of Strings
      * @return true if any values are repeated, false otherwise
      */
     public static boolean hasDuplicates(ArrayList<String> list) {
@@ -151,7 +150,7 @@ public class ArrayListsAlgor {
     /**
      * Creates a new ArrayList of Strings that is equal to the original ArrayList
      * in reverse order.  Original ArrayList is unchanged.
-     * @param list
+     * @param list ArrayList of Strings
      * @return new ArrayList of Strings in reverse order
      */
     public static ArrayList<String> revArrayList(ArrayList<String> list) {
@@ -167,7 +166,7 @@ public class ArrayListsAlgor {
     /**
      * Shifts all values in list to the Left and the value at index 0 is moved
      * to index list.size() - 1.
-     * @param list
+     * @param list ArrayList of Strings
      */
     public static void shiftLeft(ArrayList<String> list) {
         String lastName = list.get(list.size() - 1);
