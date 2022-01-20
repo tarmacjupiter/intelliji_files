@@ -30,32 +30,23 @@ public class TicketMasterDriver {
                 Scanner sb = new Scanner(System.in);
                 int num = sb.nextInt();
 
-                // If-else statements which will call certain functions depending on user input
-                if(num == 1){
-                    System.out.println(tickets);
-                } else if(num == 2){
-                    System.out.println(tickets.organizeFiltered(tickets.filterPerformerTop()));
-                } else if(num == 3){
-                    System.out.println(tickets.organizeFiltered(tickets.filterPerformerDown()));
-                } else if(num == 4){
-                    System.out.println(tickets.organizeFiltered(tickets.sortByPriceTop()));
-                } else if(num == 5){
-                    System.out.println(tickets.organizeFiltered(tickets.sortByPriceBot()));
-                }else if(num == 6){
-                    returnCityList();
-                } else if(num == 7){
-                    System.out.println("Goodbye!");
-                    Thread.sleep(1000);
-                    isValid = false;
-                    sb.close();
-                } else {
-                    System.out.println();
-                    System.out.println("Do you not know how to count to 7?");
-                    System.out.println();
+                switch (num) {
+                    case 1 -> System.out.println(tickets);
+                    case 2 -> System.out.println(tickets.organizeFiltered(tickets.filterPerformerTop()));
+                    case 3 -> System.out.println(tickets.organizeFiltered(tickets.filterPerformerDown()));
+                    case 4 -> System.out.println(tickets.organizeFiltered(tickets.sortByPriceTop()));
+                    case 5 -> System.out.println(tickets.organizeFiltered(tickets.sortByPriceBot()));
+                    case 6 -> returnCityList();
+                    case 7 -> {
+                        System.out.println("Goodbye!");
+                        Thread.sleep(1000);
+                        isValid = false;
+                        sb.close();
+                    }
+                    default -> System.out.println("Do you not know how to count to 7?");
                 }
             } catch (Exception e){
                 System.out.println("Do you not know how to count to 7?");
-                System.out.println(e);
             }
         }
     }
