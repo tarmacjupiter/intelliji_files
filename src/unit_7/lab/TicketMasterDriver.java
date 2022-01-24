@@ -7,6 +7,7 @@ public class TicketMasterDriver {
     public static void main(String[] args) throws FileNotFoundException {
         //Bool value to keep user in while loop
         boolean isValid = true;
+        // TicketMaster object
         TicketMaster tickets = new TicketMaster();
         tickets.readData();
 
@@ -30,6 +31,7 @@ public class TicketMasterDriver {
                 Scanner sb = new Scanner(System.in);
                 int num = sb.nextInt();
 
+                // Switch case statement to check for num values
                 switch (num) {
                     case 1 -> System.out.println(tickets);
                     case 2 -> System.out.println(tickets.organizeFiltered(tickets.filterPerformerTop()));
@@ -45,7 +47,7 @@ public class TicketMasterDriver {
                     }
                     default -> System.out.println("Do you not know how to count to 7?");
                 }
-            } catch (Exception e){
+            } catch (Exception e){ // If user does not know how to count to 7...
                 System.out.println("Do you not know how to count to 7?");
             }
         }
