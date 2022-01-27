@@ -1,6 +1,7 @@
 package unit_7.lab;
 
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class TicketMasterDriver {
@@ -64,7 +65,8 @@ public class TicketMasterDriver {
         tickets.readData();
         System.out.println("What city would you like to search for?");
         Scanner sb = new Scanner(System.in);
-        String cityName = sb.nextLine();
+        String cityName = sb.nextLine().toLowerCase();
+        System.out.println(cityName);
         System.out.println(tickets.organizeFiltered(tickets.filterCity(tickets.getShows(), cityName)));
     }
 }

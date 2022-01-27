@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class TicketMaster {
@@ -51,9 +52,10 @@ public class TicketMaster {
      * @return returning a new filtered ArrayList<Show>
      */
     public ArrayList<Show> filterCity(ArrayList<Show> shows, String cityName){
+        cityName = cityName.toLowerCase();
         ArrayList<Show> temp = new ArrayList<>();
         for(int i = 0; i < shows.size(); i++){
-            if(shows.get(i).getCity().equals(cityName)){
+            if(shows.get(i).getCity().equals(cityName.toLowerCase())){
                 temp.add(shows.get(i));
             }
         }

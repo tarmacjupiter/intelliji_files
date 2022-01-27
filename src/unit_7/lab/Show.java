@@ -70,7 +70,7 @@ public class Show {
     }
 
     public String getCity() {
-        return city;
+        return city.toLowerCase();
     }
 
     public void setCity(String city) {
