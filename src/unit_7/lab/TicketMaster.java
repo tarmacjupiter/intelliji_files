@@ -109,6 +109,96 @@ public class TicketMaster {
         return temp;
     }
 
+// ___________________________________________________________________________________________
+    // Selection Sorting methods!
+    /**
+     * A sorting method to organize Shows by performer, from A-Z
+     * Using the selection sort method
+     * @return the sorted Array of organized Shows
+     */
+    public ArrayList<Show> selectionFilterPerformerAZ(){
+        ArrayList<Show> temp = shows;
+
+        for(int i = 0; i < temp.size() - 1; i++){
+            int minIndex = i;
+            for(int j = i + 1; j < temp.size(); j++){
+                if(temp.get(j).getPerformer().compareTo(temp.get(minIndex).getPerformer()) < 0){
+                    minIndex = j;
+                }
+            }
+            String tempP = temp.get(i).getPerformer();
+            temp.get(i).setPerformer(temp.get(minIndex).getPerformer());
+            temp.get(minIndex).setPerformer(tempP);
+        }
+        return temp;
+    }
+
+    /**
+     * A sorting method to organize Shows by performer, from Z-A
+     * Using the selection sort method
+     * @return the sorted Array of organized Shows
+     */
+    public ArrayList<Show> selectionFilterPerformerZA(){
+        ArrayList<Show> temp = shows;
+
+        for(int i = 0; i < temp.size() - 1; i++){
+            int minIndex = i;
+            for(int j = i + 1; j < temp.size(); j++){
+                if(temp.get(j).getPerformer().compareTo(temp.get(minIndex).getPerformer()) > 0){
+                    minIndex = j;
+                }
+            }
+            String tempP = temp.get(i).getPerformer();
+            temp.get(i).setPerformer(temp.get(minIndex).getPerformer());
+            temp.get(minIndex).setPerformer(tempP);
+        }
+        return temp;
+    }
+
+    /**
+     * A sorting method to organize Shows by price, Low to High
+     * Using the selection sort method
+     * @return the sorted Array of organized Shows
+     */
+    public ArrayList<Show> selectionFilterPriceLH(){
+        ArrayList<Show> temp = shows;
+        for(int i = 0; i < temp.size() - 1; i++){
+            int minIndex = i;
+            for(int j = i + 1; j < temp.size(); j++){
+                if(temp.get(j).getPrice() < temp.get(minIndex).getPrice()){
+                    minIndex = j;
+                }
+            }
+            double tempNum = temp.get(i).getPrice();
+            temp.get(i).setPrice(temp.get(minIndex).getPrice());
+            temp.get(minIndex).setPrice(tempNum);
+        }
+        return temp;
+    }
+
+    /**
+     * A sorting method to organize Shows by price, High to Low
+     * Using the selection sort method
+     * @return the sorted Array of organized Shows
+     */
+    public ArrayList<Show> selectionFilterPriceHL(){
+        ArrayList<Show> temp = shows;
+        for(int i = 0; i < temp.size() - 1; i++){
+            int minIndex = i;
+            for(int j = i + 1; j < temp.size(); j++){
+                if(temp.get(j).getPrice() > temp.get(minIndex).getPrice()){
+                    minIndex = j;
+                }
+            }
+            double tempNum = temp.get(i).getPrice();
+            temp.get(i).setPrice(temp.get(minIndex).getPrice());
+            temp.get(minIndex).setPrice(tempNum);
+        }
+        return temp;
+    }
+
+    //_________________________________________________________________________________________________
+
     /**
      * The "filterPerformerDown" method returns an ArrayList of Shows by performer Z-A
      * This function uses the sort method and a Comparator which can compare and

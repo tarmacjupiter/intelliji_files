@@ -12,6 +12,12 @@ public class TicketMasterDriver {
         TicketMaster tickets = new TicketMaster();
         tickets.readData();
 
+        // Selection sorting methods, just to prove I made these :)
+        // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPerformerAZ()));
+        // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPerformerZA()));
+        // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPriceLH()));
+        // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPriceHL()));
+
         // Saying hello to the user
         System.out.println("Check out the NEW and coming up concerts!");
 
