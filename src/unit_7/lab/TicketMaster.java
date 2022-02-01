@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class TicketMaster {
@@ -195,6 +194,37 @@ public class TicketMaster {
             temp.get(minIndex).setPrice(tempNum);
         }
         return temp;
+    }
+
+    //_________________________________________________________________________________________________
+
+    //_________________________________________________________________________________________________
+    // Insertion Sort Methods
+
+    public ArrayList<Show> insertionSortLH(ArrayList<Show> arr){
+        for(int i = 0; i < arr.size(); i++){
+            double valueToInsert = arr.get(i).getPrice();
+            int position = i;
+            while(position > 0 && valueToInsert < arr.get(position - 1).getPrice()){
+                arr.get(position).setPrice(arr.get(position - 1).getPrice());
+                position--;
+            }
+            arr.get(position).setPrice(valueToInsert);
+        }
+        return arr;
+    }
+
+    public ArrayList<Show> insertionSortHL(ArrayList<Show> arr){
+        for(int i = 0; i < arr.size(); i++){
+            double valueToInsert = arr.get(i).getPrice();
+            int position = i;
+            while(position > 0 && valueToInsert > arr.get(position - 1).getPrice()){
+                arr.get(position).setPrice(arr.get(position - 1).getPrice());
+                position--;
+            }
+            arr.get(position).setPrice(valueToInsert);
+        }
+        return arr;
     }
 
     //_________________________________________________________________________________________________

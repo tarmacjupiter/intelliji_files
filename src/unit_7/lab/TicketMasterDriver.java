@@ -18,6 +18,10 @@ public class TicketMasterDriver {
         // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPriceLH()));
         // System.out.println(tickets.organizeFiltered(tickets.selectionFilterPriceHL()));
 
+        // Insertion sorting methods, just to prove I also made these :)
+        // System.out.println(tickets.organizeFiltered(tickets.insertionSortLH(tickets.getShows())));
+        // System.out.println(tickets.organizeFiltered(tickets.insertionSortHL(tickets.getShows())));
+
         // Saying hello to the user
         System.out.println("Check out the NEW and coming up concerts!");
 
