@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.Graphics;
 
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class SimpleSketchPanel extends JPanel {
+    @Serial
     private static final long serialVersionUID = -3630443364990545965L;
 
     private List<List<Point>> curves = new ArrayList<>();

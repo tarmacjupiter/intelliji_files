@@ -60,7 +60,7 @@ public class TicketMaster {
         }
         if(temp.isEmpty()){
             System.out.println();
-            System.out.println("No Ticket Data for that City!");
+            System.out.println("No Ticket Data for that City!\nPlease enter a valid city name!");
             System.out.println();
         }
         return temp;
