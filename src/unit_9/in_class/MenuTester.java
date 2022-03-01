@@ -6,8 +6,8 @@ public class MenuTester {
         System.out.println();
         Entree e = new Entree("Rib platter", 3);
         System.out.println();
-        Drink d = new Drink(16, false);
+        Drink d = new Drink("Pepsi Zero", 16, true);
         System.out.println();
-        Drink d2 = new Drink(16, true);
+        Drink d2 = new Drink("Coca-Cola", 16, false);
     }
 }

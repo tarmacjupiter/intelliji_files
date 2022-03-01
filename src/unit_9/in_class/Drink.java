@@ -4,8 +4,8 @@ public class Drink extends MenuItem {
     private int numOz;
     private boolean isFrozen;
 
-    public Drink(int numOz, boolean isFrozen) {
-//        super(name);
+    public Drink(String name, int numOz, boolean isFrozen) {
+        super(name);
         this.numOz = numOz;
         this.isFrozen = isFrozen;
         if (isFrozen) {
