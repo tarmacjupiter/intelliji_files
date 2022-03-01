@@ -15,4 +15,16 @@ public class Rectangle extends Shape{
         this.length = length;
     }
 
+    public int findArea(){
+        return length * width;
+    }
+
+    public int getLength(){
+        return length;
+    }
+
+    @Override
+    public String toString(){
+        return "This shape is a " + getShape() + " and is " + getColor();
+    }
 }
