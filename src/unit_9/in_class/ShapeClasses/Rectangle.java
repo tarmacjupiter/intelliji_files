@@ -4,6 +4,7 @@ public class Rectangle extends Shape{
     private int length;
     private int width;
 
+    // Constructor
     public Rectangle(String shape, String color, int length, int width){
         super(shape, color);
         this.length = length;
@@ -12,9 +13,10 @@ public class Rectangle extends Shape{
 
     public Rectangle(String shape, String color, int length){
         super(shape, color);
-        this.length = length;
+        this.length  = length;
     }
 
+    // Find the area of a rectangle
     public int findArea(){
         return length * width;
     }
@@ -23,8 +25,13 @@ public class Rectangle extends Shape{
         return length;
     }
 
+    public int getWidth(){return width;}
+
+    // Partial Override
     @Override
     public String toString(){
-        return "This shape is a " + getShape() + " and is " + getColor();
+        return super.toString() + "\n" +
+                "Width:\t" + getWidth() + "\n" +
+                "Length:\t" + getLength();
     }
 }
