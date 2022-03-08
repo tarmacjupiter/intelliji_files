@@ -22,32 +22,50 @@ public class WorkoutPlan {
 
     public WorkoutPlan(int totalNumOfWeeks){
         this.totalNumOfWeeks = totalNumOfWeeks;
-        this.totalWorkouts = totalNumOfWeeks * numOfDaysInWeek;
         workouts = new Workout[totalNumOfWeeks][numOfDaysInWeek];
         stats = new int[totalNumOfWeeks][2];
 
+        // Outer loop iterates through amount of weeks
         for(int i = 0; i < totalNumOfWeeks; i++){
+            //Inner loop iterates 7 times, for every day of the week
             for(int j = 0; j < numOfDaysInWeek; j++){
+                // Create a random number between [1,3] to choose which workout to generate
                 int randomNum = ThreadLocalRandom.current().nextInt(1, 4);
+                // nextWorkout starts at 0, so incrementing by 1 makes the workouts start at #1
                 nextWorkout++;
+
+
                 if(randomNum == 1){
+                    // Random numbers per specified workout
                     int minForExercise = generateRandomNum(15, 60);
                     int caloriesForExercise = generateRandomNum(95, 225);
+
+                    //Creating workout object via inheritance
                     Workout workout = new Strength("Lifting", nextWorkout, minForExercise, caloriesForExercise);
+
+
                     workouts[i][j] = workout;
+
+                    //Calculating total minOfExerice and burnedCalories for that workout
                     minOfExercise += minForExercise;
                     burnedCalories += caloriesForExercise;
                 } else if(randomNum == 2){
                     int minForExercise = generateRandomNum(10, 40);
                     int distanceForExercise = generateRandomNum(1, 7);
+
                     Workout workout = new Cardio("Running", nextWorkout, minForExercise, distanceForExercise);
+
                     workouts[i][j] = workout;
+
                     minOfExercise += minForExercise;
                 } else if(randomNum == 3){
                     int minForExercise = generateRandomNum(30, 60);
                     int numOfStretches = generateRandomNum(8, 12);
+
                     Workout workout = new Wellness("Stretching", nextWorkout, minForExercise, numOfStretches);
+
                     workouts[i][j] = workout;
+
                     minOfExercise += minForExercise;
                 }
             }
@@ -83,12 +101,27 @@ public class WorkoutPlan {
         }
     }
 
-    public void currentProgress(int i){
-        System.out.println("***** CURRENT PROGRESS *****");
-        System.out.println("Number of workouts completed:\t" + completedWorkouts);
-        System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
-        System.out.println("Total minutes of exercise:\t" + stats[i][1]);
-        System.out.println("Total calories burned:\t" + stats[i][0]);
+    public void printProgress(int i){
+        if(i >= stats.length){
+            System.out.println();
+            System.out.println("***** CONGRATS *****");
+            System.out.println("YOU HAVE COMPLETED YOUR " + totalNumOfWeeks + " WEEK PLAN");
+            System.out.println("HERE IS A SUMMARY OF YOUR ENTIRE PLAN");
+            System.out.println();
+            System.out.println("NUMBER OF WORKOUTS COMPLETED:\t" + completedWorkouts);
+            System.out.println("NUMBER OF WORKOUTS SKIPPED:\t" + skippedWorkouts);
+            System.out.println("TOTAL MINUTES OF EXERCISE:\t" + minOfExercise);
+            System.out.println("TOTAL CALORIES BURNED:\t" + burnedCalories);
+            System.out.println("you better keep working out... or else.");
+            return;
+        } else {
+            System.out.println("Starting!");
+            System.out.println("***** CURRENT PROGRESS *****");
+            System.out.println("Number of workouts completed:\t" + completedWorkouts);
+            System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
+            System.out.println("Total minutes of exercise:\t" + stats[i][1]);
+            System.out.println("Total calories burned:\t" + stats[i][0]);
+        }
     }
 
     public int generateRandomNum(int min, int max){

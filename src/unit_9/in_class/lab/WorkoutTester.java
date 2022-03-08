@@ -53,6 +53,7 @@ public class WorkoutTester {
 
     public static void startingWorkouts(){
         Scanner sb = new Scanner(System.in);
+        // currentIndex is used in if else logic to iterate through the weeks
         int currentIndex = 0;
         boolean status = true;
         while(status){
@@ -60,19 +61,14 @@ public class WorkoutTester {
                 // Ask user to start working out
                 System.out.println("Type 'Start' to complete one week of workouts:");
                 String startingWorkout = sb.nextLine().toLowerCase();
+                // If logic to check if user is ready to start
                 if(startingWorkout.equals("start")){
-                    System.out.println("Starting!");
-                    workoutPlan.currentProgress(currentIndex);
-                    if(currentIndex > workoutPlan.getStats().length - 2){
-                        System.out.println();
-                        System.out.println();
-                        System.out.println("***** CONGRATS *****");
-                        System.out.println("You have completed your " + workoutPlan.getTotalNumOfWeeks() + " week program!");
-                        System.out.println("Here is a summary of your entire plan");
-                        System.out.println("DATA...DATA...DATA");
+                    workoutPlan.printProgress(currentIndex);
+                    currentIndex++;
+                    if(currentIndex > workoutPlan.getStats().length){
+                        workoutPlan.printProgress(currentIndex);
                         status = false;
                     }
-                    currentIndex++;
                 } else {
                     System.out.println("Not starting idiot!");
                 }
