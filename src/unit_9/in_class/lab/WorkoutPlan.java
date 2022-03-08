@@ -78,7 +78,7 @@ public class WorkoutPlan {
         String output = "";
         for(Workout[] w : workouts){
             setCurrentWorkoutWeek(1);
-            output += "***** WEEK #: " + currentWorkoutWeek + " *****\n";
+            output += "\n***** WEEK #: " + currentWorkoutWeek + " *****\n";
             output += "WORKOUT\t\t\tNAME\t\t\tMINUTES\n";
             for(Workout specificWorkout : w){
                 output += specificWorkout.toString() + "\n";
@@ -87,16 +87,32 @@ public class WorkoutPlan {
         return output;
     }
 
-    public void workoutNextWeek(){
-        for(Workout[] w : workouts){
-            for(Workout specificWorkout : w){
-                int randomNum = generateRandomNum(1, 8);
-                if (randomNum <= 2){
-                    System.out.println("Skipped Workout #: " + specificWorkout.getWorkoutNum());
-                    skippedWorkouts++;
-                } else {
-                    completedWorkouts++;
-                }
+//    public void workoutNextWeek(){
+//        for(Workout[] w : workouts){
+//            for(Workout specificWorkout : w){
+//                int randomNum = generateRandomNum(1, 8);
+//                if (randomNum <= 2){
+//                    System.out.println("Skipped Workout #: " + specificWorkout.getWorkoutNum());
+//                    skippedWorkouts++;
+//                } else {
+//                    completedWorkouts++;
+//                }
+//            }
+//        }
+//    }
+
+    public void workoutNextWeek(int i){
+        if(i >= stats.length){
+            return;
+        }
+        Workout[] week = workouts[i];
+        for(Workout workout : week){
+            int randomNum = ThreadLocalRandom.current().nextInt(1, 10);
+            if(randomNum <= 2){
+                skippedWorkouts++;
+                System.out.println("Skipped workout #:\t" + workout.getWorkoutNum());
+            } else {
+                completedWorkouts++;
             }
         }
     }
@@ -113,14 +129,16 @@ public class WorkoutPlan {
             System.out.println("TOTAL MINUTES OF EXERCISE:\t" + minOfExercise);
             System.out.println("TOTAL CALORIES BURNED:\t" + burnedCalories);
             System.out.println("you better keep working out... or else.");
+            System.out.println();
             return;
         } else {
-            System.out.println("Starting!");
+            System.out.println();
             System.out.println("***** CURRENT PROGRESS *****");
             System.out.println("Number of workouts completed:\t" + completedWorkouts);
             System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
             System.out.println("Total minutes of exercise:\t" + stats[i][1]);
             System.out.println("Total calories burned:\t" + stats[i][0]);
+            System.out.println();
         }
     }
 
