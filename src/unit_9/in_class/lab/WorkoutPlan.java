@@ -13,12 +13,18 @@ public class WorkoutPlan {
     private Workout[][] workouts;
     private int totalWorkouts;
 
+    // Row represents each week
+    // The first index in the column will represent the total calories for that week
+    // The second index in the column will represent the total minOfExercises
+    int[][] stats;
+
     private final int numOfDaysInWeek = 7;
 
     public WorkoutPlan(int totalNumOfWeeks){
         this.totalNumOfWeeks = totalNumOfWeeks;
         this.totalWorkouts = totalNumOfWeeks * numOfDaysInWeek;
         workouts = new Workout[totalNumOfWeeks][numOfDaysInWeek];
+        stats = new int[totalNumOfWeeks][2];
 
         for(int i = 0; i < totalNumOfWeeks; i++){
             for(int j = 0; j < numOfDaysInWeek; j++){
@@ -45,6 +51,8 @@ public class WorkoutPlan {
                     minOfExercise += minForExercise;
                 }
             }
+            stats[i][0] = burnedCalories;
+            stats[i][1] = minOfExercise;
         }
     }
 
@@ -75,24 +83,13 @@ public class WorkoutPlan {
         }
     }
 
-//    int currentRow = -1;
-//    public void currentProgess(){
-//        currentRow++;
-////        for(Workout[] w : workouts){
-////            System.out.println("***** CURRENT PROGRESS *****");
-////            System.out.println("Number of workouts completed:\t" + completedWorkouts);
-////            System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
-////            System.out.println("Total minutes of exercise:\t" + minOfExercise);
-////            System.out.println("Total calories burned:\t" + burnedCalories);
-////        }
-//        for(int i = 0; i < workouts[currentRow].length; i++){
-//            System.out.println("***** CURRENT PROGRESS *****");
-//            System.out.println("Number of workouts completed:\t" + completedWorkouts);
-//            System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
-//            System.out.println("Total minutes of exercise:\t" + minOfExercise);
-//            System.out.println("Total calories burned:\t" + burnedCalories);
-//        }
-//    }
+    public void currentProgress(int i){
+        System.out.println("***** CURRENT PROGRESS *****");
+        System.out.println("Number of workouts completed:\t" + completedWorkouts);
+        System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
+        System.out.println("Total minutes of exercise:\t" + stats[i][1]);
+        System.out.println("Total calories burned:\t" + stats[i][0]);
+    }
 
     public int generateRandomNum(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);
@@ -122,5 +119,21 @@ public class WorkoutPlan {
 
     public void setTotalWorkouts(int totalWorkouts) {
         this.totalWorkouts = totalWorkouts;
+    }
+
+    public int getTotalNumOfWeeks() {
+        return totalNumOfWeeks;
+    }
+
+    public void setTotalNumOfWeeks(int totalNumOfWeeks) {
+        this.totalNumOfWeeks = totalNumOfWeeks;
+    }
+
+    public int[][] getStats() {
+        return stats;
+    }
+
+    public void setStats(int[][] stats) {
+        this.stats = stats;
     }
 }

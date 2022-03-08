@@ -15,6 +15,7 @@ public class WorkoutTester {
                 // Ask user how many weeks they want in their schedule
                 System.out.println("How many weeks would you like to schedule?");
                 int weeks = sb.nextInt();
+
                 // Print out the details of their workout plan
                 workoutPlan = new WorkoutPlan(weeks);
                 System.out.println("Great! Now lets take a look at your " + weeks + " week schedule!");
@@ -32,6 +33,7 @@ public class WorkoutTester {
 
             } catch (Exception e){
                 System.out.println("Please enter a valid integer!");
+                e.printStackTrace();
             }
         }
     }
@@ -51,6 +53,7 @@ public class WorkoutTester {
 
     public static void startingWorkouts(){
         Scanner sb = new Scanner(System.in);
+        int currentIndex = 0;
         boolean status = true;
         while(status){
             try {
@@ -59,6 +62,17 @@ public class WorkoutTester {
                 String startingWorkout = sb.nextLine().toLowerCase();
                 if(startingWorkout.equals("start")){
                     System.out.println("Starting!");
+                    workoutPlan.currentProgress(currentIndex);
+                    if(currentIndex > workoutPlan.getStats().length - 2){
+                        System.out.println();
+                        System.out.println();
+                        System.out.println("***** CONGRATS *****");
+                        System.out.println("You have completed your " + workoutPlan.getTotalNumOfWeeks() + " week program!");
+                        System.out.println("Here is a summary of your entire plan");
+                        System.out.println("DATA...DATA...DATA");
+                        status = false;
+                    }
+                    currentIndex++;
                 } else {
                     System.out.println("Not starting idiot!");
                 }
