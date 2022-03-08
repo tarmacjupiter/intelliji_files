@@ -7,12 +7,12 @@ public class Strength extends Workout {
 
     public Strength(String name, int workoutNum, int duration, int weight) {
         super(name, workoutNum, duration);
-        this.weight = weight;
+        this.weight = ThreadLocalRandom.current().nextInt(95, 226);
     }
 
     @Override // Partial
     public String toString(){
-        return getWorkoutNum() + ":\t" + getName() + "\t" + getDuration();
+        return "WORKOUT #" + getWorkoutNum() + ":\t\t\t" + getName() + "\t\t\t" + getDuration();
     }
 
     // Generates a random number between [1,3] representing a multiplier

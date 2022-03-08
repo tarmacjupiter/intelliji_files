@@ -11,9 +11,9 @@ public class Wellness extends Workout {
         this.numStretches = numStretches;
     }
 
-    //toString method
+    @Override // Partial
     public String toString(){
-        return getWorkoutNum() + ":\t" + getName() + "\t" + getDuration();
+        return "WORKOUT #" + getWorkoutNum() + ":\t\t\t" + getName() + "\t\t\t" + getDuration();
     }
 
     // Generates a random number between [5,10] representing the calories burned per stretch

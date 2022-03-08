@@ -1,5 +1,7 @@
 package unit_9.in_class.lab;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Workout {
     private String name;
     private int workoutNum;
@@ -9,12 +11,14 @@ public class Workout {
     public Workout(String name, int workoutNum, int duration) {
         this.name = name;
         this.workoutNum = workoutNum;
-        this.duration = duration;
+        this.duration = ThreadLocalRandom.current().nextInt(10, 41);
     }
+
+    public Workout(){}
 
     // toString method
     public String toString(){
-        return "WORKOUT #" + workoutNum + ":\t" + name + "\t" + duration;
+        return "WORKOUT #" + workoutNum + ":\t" + name + "\t\t" + duration;
     }
 
     // Starting exercise
@@ -39,6 +43,10 @@ public class Workout {
 
     public void setWorkoutNum(int workoutNum) {
         this.workoutNum = workoutNum;
+    }
+
+    public void setWorkoutNum(int workoutNum, String add){
+        this.workoutNum += workoutNum;
     }
 
     public int getDuration() {

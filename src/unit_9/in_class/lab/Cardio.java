@@ -3,33 +3,34 @@ package unit_9.in_class.lab;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Cardio extends Workout {
-    private int miles;
+    private int distance;
     private final int minPerHour = 60;
 
-    public Cardio(String name, int workoutNum, int duration, int miles){
+    public Cardio(String name, int workoutNum, int duration, int distance){
         super(name, workoutNum, duration);
-        this.miles = miles;
+        this.distance = distance;
     }
 
     @Override // Partial
     public String toString(){
-        return getWorkoutNum() + ":\t" + getName() + "\t" + getDuration();
+        return String.format("WORKOUT #%s:\t\t\t%s\t\t\t%s", getWorkoutNum(), getName(), getDuration());
+
     }
 
     // Random number between 80-140 and divided that by the total amount of miles ran
     public int startExericse(){
         int randomNum = ThreadLocalRandom.current().nextInt(80, 140 + 1);
-        return miles / randomNum;
+        return distance / randomNum;
     }
 
     // Getters and Setters
 
-    public int getMiles() {
-        return miles;
+    public int getDistance() {
+        return distance;
     }
 
-    public void setMiles(int miles) {
-        this.miles = miles;
+    public void setDistance(int distance) {
+        this.distance = distance;
     }
 
     public int getMinPerHour() {
