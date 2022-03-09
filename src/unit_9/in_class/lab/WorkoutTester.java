@@ -50,6 +50,13 @@ public class WorkoutTester {
         }
     }
 
+    /**
+     * startingWorkouts is used in the main method, validates and will iterate when a user starts a workout,
+     * using workoutNextWeek() and printProgress() from the WorkoutPlan class
+     *
+     * (Getting strange behavior when there was another while try-catch in another while try-catch in the main method,
+     * so keeping this behavior in a function helped with running the program)
+     */
     public static void startingWorkouts(){
         Scanner sb = new Scanner(System.in);
         // currentIndex is used in if else logic to iterate through the weeks
@@ -70,7 +77,7 @@ public class WorkoutTester {
                         status = false;
                     }
                 } else {
-                    System.out.println("Not starting idiot!");
+                    System.out.println("You better hurry up.");
                     System.out.println();
                 }
             } catch (Exception e){

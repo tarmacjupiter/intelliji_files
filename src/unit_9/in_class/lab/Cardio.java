@@ -13,7 +13,7 @@ public class Cardio extends Workout {
 
     @Override // Partial
     public String toString(){
-        return String.format("WORKOUT #%s:\t\t\t%s\t\t\t%s", getWorkoutNum(), getName(), getDuration());
+        return "WORKOUT #" + getWorkoutNum() + ":\t\t" + getName() + "\t\t" + getDuration();
 
     }
 

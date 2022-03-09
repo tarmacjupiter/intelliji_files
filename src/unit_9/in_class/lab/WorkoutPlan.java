@@ -3,6 +3,7 @@ package unit_9.in_class.lab;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WorkoutPlan {
+    // Instance variables
     private int totalNumOfWeeks;
     private int completedWorkouts;
     private int skippedWorkouts;
@@ -10,6 +11,7 @@ public class WorkoutPlan {
     private int nextWorkout;
     private int burnedCalories;
     private int minOfExercise;
+
     private Workout[][] workouts;
     private int totalWorkouts;
 
@@ -20,6 +22,15 @@ public class WorkoutPlan {
 
     private final int numOfDaysInWeek = 7;
 
+    /**
+     * The WorkoutPlan Constructor that takes the totalNumOfWeeks as a parameter.
+     * The Contructor iterates throughout the totalNumOfWeeks for the outer for-loop (representing the rows)
+     * The inner for-loop iterates numOfDaysInWeek (representing the columns)
+     *
+     * A random number between [1,3] determine which workout will be assigned that specific [i][j] index of the
+     * 2 dimensional workouts array
+     * @param totalNumOfWeeks
+     */
     public WorkoutPlan(int totalNumOfWeeks){
         this.totalNumOfWeeks = totalNumOfWeeks;
         workouts = new Workout[totalNumOfWeeks][numOfDaysInWeek];
@@ -69,11 +80,16 @@ public class WorkoutPlan {
                     minOfExercise += minForExercise;
                 }
             }
+            // Keeping track of the burnedCalories and the minOExercise variables, storing in 2D Array
             stats[i][0] = burnedCalories;
             stats[i][1] = minOfExercise;
         }
     }
 
+    /**
+     * toString method accessing the toString of every particular workout
+     * @return a large String
+     */
     public String toString(){
         String output = "";
         for(Workout[] w : workouts){
@@ -87,27 +103,17 @@ public class WorkoutPlan {
         return output;
     }
 
-//    public void workoutNextWeek(){
-//        for(Workout[] w : workouts){
-//            for(Workout specificWorkout : w){
-//                int randomNum = generateRandomNum(1, 8);
-//                if (randomNum <= 2){
-//                    System.out.println("Skipped Workout #: " + specificWorkout.getWorkoutNum());
-//                    skippedWorkouts++;
-//                } else {
-//                    completedWorkouts++;
-//                }
-//            }
-//        }
-//    }
-
+    /**
+     * Iterates through a week and goes workout by workout to determine if there are any skipped workouts
+     * @param i (Is used to check for the progress for ONE week)
+     */
     public void workoutNextWeek(int i){
         if(i >= stats.length){
             return;
         }
         Workout[] week = workouts[i];
         for(Workout workout : week){
-            int randomNum = ThreadLocalRandom.current().nextInt(1, 10);
+            int randomNum = ThreadLocalRandom.current().nextInt(1, 11);
             if(randomNum <= 2){
                 skippedWorkouts++;
                 System.out.println("Skipped workout #:\t" + workout.getWorkoutNum());
@@ -117,6 +123,11 @@ public class WorkoutPlan {
         }
     }
 
+    /**
+     * Prints the progress later used in the Tester class, will check if workout weeks are completed or not
+     * @param i (Is used to check for the progress for ONE week)
+     *          E.x. If there are 3 weeks are we call printProgress(0) that will show the status for week 1
+     */
     public void printProgress(int i){
         if(i >= stats.length){
             System.out.println();
@@ -142,6 +153,12 @@ public class WorkoutPlan {
         }
     }
 
+    /**
+     * Generates a random number between [x, y)
+     * @param min
+     * @param max
+     * @return the random number
+     */
     public int generateRandomNum(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }

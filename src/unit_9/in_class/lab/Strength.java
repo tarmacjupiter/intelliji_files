@@ -12,7 +12,7 @@ public class Strength extends Workout {
 
     @Override // Partial
     public String toString(){
-        return "WORKOUT #" + getWorkoutNum() + ":\t\t\t" + getName() + "\t\t\t" + getDuration();
+        return "WORKOUT #" + getWorkoutNum() + ":\t\t" + getName() + "\t\t" + getDuration();
     }
 
     // Generates a random number between [1,3] representing a multiplier
