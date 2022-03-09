@@ -16,9 +16,16 @@ public class Workout {
 
     public Workout(){}
 
-    // toString method
+    @Override // Partial
     public String toString(){
-        return "WORKOUT #" + workoutNum + ":\t" + name + "\t\t" + duration;
+        String output = "";
+        output += "WORKOUT #" +  getWorkoutNum() + ":";
+        output += "\t" + getName();
+        while(output.length() < 15){
+            output += " ";
+        }
+        output += "\t" + getDuration();
+        return output;
     }
 
     // Starting exercise

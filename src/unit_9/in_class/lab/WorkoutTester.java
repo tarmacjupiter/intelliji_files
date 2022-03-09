@@ -72,7 +72,7 @@ public class WorkoutTester {
                     workoutPlan.workoutNextWeek(currentIndex);
                     workoutPlan.printProgress(currentIndex);
                     currentIndex++;
-                    if(currentIndex > workoutPlan.getStats().length){
+                    if(currentIndex >= workoutPlan.getStats().length){
                         workoutPlan.printProgress(currentIndex);
                         status = false;
                     }

@@ -13,8 +13,11 @@ public class Cardio extends Workout {
 
     @Override // Partial
     public String toString(){
-        return "WORKOUT #" + getWorkoutNum() + ":\t\t" + getName() + "\t\t" + getDuration();
-
+        String output = "";
+        output += "WORKOUT #" +  getWorkoutNum() + ":";
+        output += "\t" + getName();
+        output += "\t\t" + getDuration();
+        return output;
     }
 
     // Random number between 80-140 and divided that by the total amount of miles ran

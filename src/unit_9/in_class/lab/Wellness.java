@@ -13,7 +13,11 @@ public class Wellness extends Workout {
 
     @Override // Partial
     public String toString(){
-        return "WORKOUT #" + getWorkoutNum() + ":\t\t" + getName() + "\t\t" + getDuration();
+        String output = "";
+        output += "WORKOUT #" +  getWorkoutNum() + ":";
+        output += "\t" + getName();
+        output += "\t\t" + getDuration();
+        return output;
     }
 
     // Generates a random number between [5,10] representing the calories burned per stretch

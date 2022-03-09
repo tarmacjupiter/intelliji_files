@@ -57,7 +57,7 @@ public class WorkoutPlan {
 
                     workouts[i][j] = workout;
 
-                    //Calculating total minOfExerice and burnedCalories for that workout
+                    //Calculating total minOfExercise and burnedCalories for that workout
                     minOfExercise += minForExercise;
                     burnedCalories += caloriesForExercise;
                 } else if(randomNum == 2){
@@ -73,7 +73,7 @@ public class WorkoutPlan {
                     int minForExercise = generateRandomNum(30, 60);
                     int numOfStretches = generateRandomNum(8, 12);
 
-                    Workout workout = new Wellness("Stretching", nextWorkout, minForExercise, numOfStretches);
+                    Workout workout = new Wellness("Yoga", nextWorkout, minForExercise, numOfStretches);
 
                     workouts[i][j] = workout;
 
@@ -95,7 +95,7 @@ public class WorkoutPlan {
         for(Workout[] w : workouts){
             setCurrentWorkoutWeek(1);
             output += "\n***** WEEK #: " + currentWorkoutWeek + " *****\n";
-            output += "WORKOUT\t\t\tNAME\t\t\tMINUTES\n";
+            output += "WORKOUT\t\tNAME\t\tMINUTES\n";
             for(Workout specificWorkout : w){
                 output += specificWorkout.toString() + "\n";
             }
