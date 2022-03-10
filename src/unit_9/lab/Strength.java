@@ -1,4 +1,4 @@
-package unit_9.in_class.lab;
+package unit_9.lab;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -10,13 +10,17 @@ public class Strength extends Workout {
         this.weight = ThreadLocalRandom.current().nextInt(95, 226);
     }
 
-    @Override // Partial
+//    @Override // Partial
+//    public String toString(){
+//        String output = "";
+//        output += "WORKOUT #" +  getWorkoutNum() + ":";
+//        output += "\t\t" + getName();
+//        output += "\t\t\t" + getDuration();
+//        return output;
+//    }
+
     public String toString(){
-        String output = "";
-        output += "WORKOUT #" +  getWorkoutNum() + ":";
-        output += "\t" + getName();
-        output += "\t\t" + getDuration();
-        return output;
+        return String.format("WORKOUT #%s:%20s %5s", getWorkoutNum(), getName(), getDuration());
     }
 
     // Generates a random number between [1,3] representing a multiplier

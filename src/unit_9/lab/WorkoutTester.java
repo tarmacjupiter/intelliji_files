@@ -1,4 +1,4 @@
-package unit_9.in_class.lab;
+package unit_9.lab;
 
 import java.util.Scanner;
 

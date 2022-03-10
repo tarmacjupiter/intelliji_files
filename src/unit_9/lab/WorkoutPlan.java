@@ -1,4 +1,4 @@
-package unit_9.in_class.lab;
+package unit_9.lab;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -73,7 +73,7 @@ public class WorkoutPlan {
                     int minForExercise = generateRandomNum(30, 60);
                     int numOfStretches = generateRandomNum(8, 12);
 
-                    Workout workout = new Wellness("Yoga", nextWorkout, minForExercise, numOfStretches);
+                    Workout workout = new Wellness("Stretching", nextWorkout, minForExercise, numOfStretches);
 
                     workouts[i][j] = workout;
 
@@ -95,7 +95,7 @@ public class WorkoutPlan {
         for(Workout[] w : workouts){
             setCurrentWorkoutWeek(1);
             output += "\n***** WEEK #: " + currentWorkoutWeek + " *****\n";
-            output += "WORKOUT\t\tNAME\t\tMINUTES\n";
+            output += "WORKOUT\t\t\tNAME\t\t\tMINUTES\n";
             for(Workout specificWorkout : w){
                 output += specificWorkout.toString() + "\n";
             }
@@ -136,9 +136,10 @@ public class WorkoutPlan {
             System.out.println("HERE IS A SUMMARY OF YOUR ENTIRE PLAN");
             System.out.println();
             System.out.println("NUMBER OF WORKOUTS COMPLETED:\t" + completedWorkouts);
-            System.out.println("NUMBER OF WORKOUTS SKIPPED:\t" + skippedWorkouts);
-            System.out.println("TOTAL MINUTES OF EXERCISE:\t" + minOfExercise);
-            System.out.println("TOTAL CALORIES BURNED:\t" + burnedCalories);
+            System.out.println("NUMBER OF WORKOUTS SKIPPED:\t\t" + skippedWorkouts);
+            System.out.println("TOTAL MINUTES OF EXERCISE:\t\t" + minOfExercise);
+            System.out.println("TOTAL CALORIES BURNED:\t\t\t" + burnedCalories);
+            System.out.println();
             System.out.println("you better keep working out... or else.");
             System.out.println();
             return;
