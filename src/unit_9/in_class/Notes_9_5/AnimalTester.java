@@ -26,14 +26,31 @@ public class AnimalTester {
         // You stored sub-classes of the parent class "Animal", such as Cow and Pig
         // this is allowed because these sub-classes inherit the parent classes
 
-        for (Animal a: barn)
+
+        int numAnimals = 0, numPigs = 0, numCows = 0;
+
+        for (Animal a : barn) {
+            if(a instanceof Pig){
+                numPigs++;
+            } else if(a instanceof Cow){
+                numCows++;
+            } else if(a != null){
+                numAnimals++;
+            }
             a.speak();
+        }
+
+        System.out.println("Number of Animals:\t" + numAnimals);
+        System.out.println("Number of Pigs:\t" + numPigs);
+        System.out.println("Number of Cows:\t" + numCows);
         // 3. What method is getting called here?  The speak method of the Animal class?
+
         // The method getting called depends on the object in the array, if it is just an
         // animal class the method from the animal class gets called, if it is from the
         // cow or pig classes, those respective methods get called.
 
         // 4. Try to summarize in 2-3 sentences WHAT you observed in this code.
+
         // Polymorphism is a way to change objects to make them take different forms and for
         // them to have the same method names, but inherently do different things.
     }
