@@ -20,7 +20,7 @@ public class Strength extends Workout {
 //    }
 
     public String toString(){
-        return String.format("WORKOUT #%s:%20s %5s", getWorkoutNum(), getName(), getDuration());
+        return String.format("WORKOUT #%-10s%-25s%s\n", getWorkoutNum(), getName(), getDuration());
     }
 
     // Generates a random number between [1,3] representing a multiplier

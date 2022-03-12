@@ -23,7 +23,6 @@ public class WorkoutTester {
                 System.out.println(workoutPlan);
                 System.out.println();
                 System.out.println("Time to start working out!");
-
                 // Fill array of numbers to keep track of skipped and completed workouts
                 int[] numArr = new int[workoutPlan.getTotalWorkouts()];
                 fillArray(numArr, workoutPlan.getTotalWorkouts());

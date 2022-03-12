@@ -19,8 +19,10 @@ public class Cardio extends Workout {
 //        output += "\t\t\t" + getDuration();
 //        return output;
 //    }
+
+    //WORKOUT #%-10s%-25s%s
     public String toString(){
-        return String.format("WORKOUT #%s:%-10s%-5s", getWorkoutNum(), getName(), getDuration());
+        return String.format("WORKOUT #%-10s%-25s%s\n", getWorkoutNum(), getName(), getDuration());
     }
 
     // Random number between 80-140 and divided that by the total amount of miles ran

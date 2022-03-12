@@ -24,7 +24,7 @@ public class Wellness extends Workout {
 //    }
 
     public String toString(){
-        return String.format("WORKOUT #%s:%-10s%-5s", getWorkoutNum(), getName(), getDuration());
+        return String.format("WORKOUT #%-10s%-25s%s\n", getWorkoutNum(), getName(), getDuration());
     }
 
     // Generates a random number between [5,10] representing the calories burned per stretch
