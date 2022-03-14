@@ -95,7 +95,8 @@ public class WorkoutPlan {
         for(Workout[] w : workouts){
             setCurrentWorkoutWeek(1);
             output += "\n***** WEEK #: " + currentWorkoutWeek + " *****\n";
-            output += "WORKOUT\t\t\tNAME\t\t\tMINUTES\n";
+            output += String.format("%-19s%-25s%s", "WORKOUT", "NAME", "MINUTES");
+            output += "\n";
             for(Workout specificWorkout : w){
                 output += specificWorkout.toString() + "\n";
             }
@@ -147,9 +148,9 @@ public class WorkoutPlan {
             System.out.println();
             System.out.println("***** CURRENT PROGRESS *****");
             System.out.println("Number of workouts completed:\t" + completedWorkouts);
-            System.out.println("Number of workouts skipped:\t" + skippedWorkouts);
-            System.out.println("Total minutes of exercise:\t" + stats[i][1]);
-            System.out.println("Total calories burned:\t" + stats[i][0]);
+            System.out.println("Number of workouts skipped:\t\t" + skippedWorkouts);
+            System.out.println("Total minutes of exercise:\t\t" + stats[i][1]);
+            System.out.println("Total calories burned:\t\t\t" + stats[i][0]);
             System.out.println();
         }
     }

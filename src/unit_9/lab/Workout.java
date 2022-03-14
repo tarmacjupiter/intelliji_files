@@ -18,17 +18,13 @@ public class Workout {
 
     @Override // Partial
     public String toString(){
-        String output = "";
-        output += "WORKOUT #" +  getWorkoutNum() + ":";
-        output += "\t" + getName();
-        while(output.length() < 15){
-            output += " ";
-        }
-        output += "\t" + getDuration();
-        return output;
+        return String.format("%-10s%-25s%s\n", getWorkoutNum(), getName(), getDuration());
     }
 
-    // Starting exercise
+    /**
+     * Starts an exercise
+     * @return 0
+     */
     public int startExercise(){
         System.out.println("Starting a workout");
         return 0;
