@@ -52,9 +52,9 @@ public class WorkoutPlan {
                     int caloriesForExercise = generateRandomNum(95, 225);
 
                     //Creating workout object via inheritance
-                    Workout workout = new Strength("Lifting", nextWorkout, minForExercise, caloriesForExercise);
+                    Workout workout = subWorkoutStrength(minForExercise, caloriesForExercise);
 
-
+                    // Assigning values into the array
                     workouts[i][j] = workout;
 
                     //Calculating total minOfExercise and burnedCalories for that workout
@@ -64,7 +64,7 @@ public class WorkoutPlan {
                     int minForExercise = generateRandomNum(10, 40);
                     int distanceForExercise = generateRandomNum(1, 7);
 
-                    Workout workout = new Cardio("Running", nextWorkout, minForExercise, distanceForExercise);
+                    Workout workout = subWorkoutCardio(minForExercise, distanceForExercise);
 
                     workouts[i][j] = workout;
 
@@ -73,7 +73,7 @@ public class WorkoutPlan {
                     int minForExercise = generateRandomNum(30, 60);
                     int numOfStretches = generateRandomNum(8, 12);
 
-                    Workout workout = new Wellness("Stretching", nextWorkout, minForExercise, numOfStretches);
+                    Workout workout = subWorkoutWellness(minForExercise, numOfStretches);
 
                     workouts[i][j] = workout;
 
@@ -102,6 +102,37 @@ public class WorkoutPlan {
             }
         }
         return output;
+    }
+
+    /**
+     * Helper method to build a Strength object
+     * @param minutes
+     * @param calories
+     * @return a Strength Object
+     */
+    public Workout subWorkoutStrength(int minutes, int calories){
+        //Creating workout object via inheritance
+        return new Strength("Lifting", nextWorkout, minutes, calories);
+    }
+
+    /**
+     * Helper method to build a Wellness object
+     * @param minutes
+     * @param calories
+     * @return
+     */
+    public Workout subWorkoutWellness(int minutes, int calories){
+        return new Wellness("Stretching", nextWorkout, minutes, calories);
+    }
+
+    /**
+     * Helper method to build a Cardio object
+     * @param minutes
+     * @param calories
+     * @return
+     */
+    public Workout subWorkoutCardio(int minutes, int calories){
+        return new Cardio("Running", nextWorkout, minutes, calories);
     }
 
     /**
