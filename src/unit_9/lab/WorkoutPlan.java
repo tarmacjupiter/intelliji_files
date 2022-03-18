@@ -37,13 +37,19 @@ public class WorkoutPlan {
         this.totalNumOfWeeks = totalNumOfWeeks;
         workouts = new Workout[totalNumOfWeeks][numOfDaysInWeek];
         stats = new int[totalNumOfWeeks][2];
+        this.completedWorkouts = 0;
+        this.skippedWorkouts = 0;
+        this.currentWorkoutWeek = 0;
+        this.nextWorkout = 0;
+        this.burnedCalories = 0;
+        this.minOfExercise = 0;
 
         // Outer loop iterates through amount of weeks
         for(int i = 0; i < totalNumOfWeeks; i++){
             //Inner loop iterates 7 times, for every day of the week
             for(int j = 0; j < numOfDaysInWeek; j++){
                 // Create a random number between [1,3] to choose which workout to generate
-                int randomNum = ThreadLocalRandom.current().nextInt(1, 4);
+                int randomNum = generateRandomNum(1, 3);
                 // nextWorkout starts at 0, so incrementing by 1 makes the workouts start at #1
                 nextWorkout++;
 
@@ -78,7 +84,6 @@ public class WorkoutPlan {
                     Workout workout = subWorkoutWellness(minForExercise, numOfStretches);
 
                     workouts[i][j] = workout;
-
                     minOfExercise += minForExercise;
                 }
             }

@@ -17,7 +17,7 @@ public class PowerLifting extends Strength {
         int rNum = ThreadLocalRandom.current().nextInt(0, 1);
 
         Thread.sleep(5);
-        if(rNum === 0){
+        if(rNum == 0){
             System.out.println("Successful Heavy Lift!");
         } else {
             System.out.println("OOPS. Your back is broken!!!");
