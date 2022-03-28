@@ -16,20 +16,22 @@ public class WorkoutTester {
                 System.out.println("How many weeks would you like to schedule?");
                 String weeksTxt = sb.nextLine();
                 int weeks = Integer.parseInt(weeksTxt);
+                if(weeks > 0){
+                    // Print out the details of their workout plan
+                    workoutPlan = new WorkoutPlan(weeks);
+                    System.out.println("Great! Now lets take a look at your " + weeks + " week schedule!");
+                    System.out.println(workoutPlan);
+                    System.out.println();
+                    System.out.println("Time to start working out!");
+                    // Fill array of numbers to keep track of skipped and completed workouts
+                    int[] numArr = new int[workoutPlan.getTotalWorkouts()];
+                    fillArray(numArr, workoutPlan.getTotalWorkouts());
 
-                // Print out the details of their workout plan
-                workoutPlan = new WorkoutPlan(weeks);
-                System.out.println("Great! Now lets take a look at your " + weeks + " week schedule!");
-                System.out.println(workoutPlan);
-                System.out.println();
-                System.out.println("Time to start working out!");
-                // Fill array of numbers to keep track of skipped and completed workouts
-                int[] numArr = new int[workoutPlan.getTotalWorkouts()];
-                fillArray(numArr, workoutPlan.getTotalWorkouts());
-
-                startingWorkouts();
-                status = false;
-
+                    startingWorkouts();
+                    status = false;
+                } else {
+                    System.out.println("Please enter a valid integer!");
+                }
             } catch (Exception e){
                 System.out.println("Please enter a valid integer!");
             }
