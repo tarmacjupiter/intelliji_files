@@ -29,6 +29,7 @@ public class WorkoutTester {
 
                     startingWorkouts();
                     status = false;
+                    sb.close();
                 } else {
                     System.out.println("Please enter a valid integer!");
                 }
@@ -76,6 +77,7 @@ public class WorkoutTester {
                     if(currentIndex >= workoutPlan.getStats().length){
                         workoutPlan.printProgress(currentIndex);
                         status = false;
+                        sb.close();
                     }
                 } else {
                     System.out.println("You better hurry up.");
